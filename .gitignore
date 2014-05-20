@@ -14,3 +14,4 @@ hs_err_pid*
 .idea/artifacts/project_war_exploded.xml
 .idea/libraries/Maven__junit_junit_3_8_1.xml
 project.iml
+.idea
