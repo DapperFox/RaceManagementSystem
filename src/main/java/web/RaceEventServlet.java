@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.ModelAndView;
+
+
 @WebServlet("/*")
 public class RaceEventServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -23,13 +26,14 @@ public class RaceEventServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uriString = request.getRequestURI();
-		
+		ModelAndView modelAndView = null;
+				
 		Pattern pattern = Pattern.compile(regexCreatePattern);
 		Matcher matcher = pattern.matcher(uriString);
 		
 		if(matcher.matches()){
 			//Create a new race
-			
+			//modelAndView = 
 		}
 		
 		pattern = Pattern.compile(regexRacePattern);
