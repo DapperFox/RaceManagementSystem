@@ -7,6 +7,10 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <%--twitter bootstrap--%>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <%--custom css--%>
+    <link rel="stylesheet" href="/resources/style/main.css"/>
+    <%--custom js--%>
+    <script src="/resources/script/main.js"></script>
 </head>
 <body>
     <h1>Testing Here</h1>
