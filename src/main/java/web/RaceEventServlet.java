@@ -22,6 +22,7 @@ public class RaceEventServlet extends HttpServlet {
 	String regexCreatePattern = "/race/create";
 	String regexRacePattern = "(/race/)([0-9]+)(/[A-Za-z]*)?";
 	String regexRaceDetails = "/race/[0-9]+/RaceDetails";
+	String regexRaceList = "/race/events";
 	
 	
     public RaceEventServlet() {
@@ -38,8 +39,15 @@ public class RaceEventServlet extends HttpServlet {
 		Matcher matcher = pattern.matcher(uriString);
 		
 		if(matcher.matches()){
-			//Create a new race
-			//modelAndView = 
+			modelAndView = raceController.createNewRaceEvent();
+			
+		}
+		
+		pattern = Pattern.compile(regexRaceList);
+		matcher = pattern.matcher(uriString);
+		
+		if(matcher.matches()){
+		
 			modelAndView = raceController.createNewRaceEvent();
 			
 		}
