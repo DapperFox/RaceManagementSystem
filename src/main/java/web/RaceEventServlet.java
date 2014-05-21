@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import models.ModelAndView;
 
 
-@WebServlet("/*")
+@WebServlet("/race")
 public class RaceEventServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	String regexCreatePattern = "/race/create";
