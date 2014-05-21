@@ -11,7 +11,7 @@ public class RaceGetController {
 		this.request = request;
 		this.response = response;
 
-	};
+	}
 	
 	public ModelAndView createNewRaceEvent(){
 		RaceEvent race = null;

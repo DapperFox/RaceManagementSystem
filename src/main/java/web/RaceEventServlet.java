@@ -18,6 +18,8 @@ public class RaceEventServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	String regexCreatePattern = "/race/create";
 	String regexRacePattern = "(/race/)([0-9]+)(/[A-Za-z]*)?";
+	String regexRaceDetails = "/race/[0-9]+/RaceDetails";
+	
 	
 	
     public RaceEventServlet() {
