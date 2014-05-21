@@ -9,6 +9,6 @@
 <title>Create a new Race Event</title>
 </head>
 <body>
-
+	<h1>It verks!</h1>
 </body>
 </html>
