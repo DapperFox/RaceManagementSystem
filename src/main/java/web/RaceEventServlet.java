@@ -48,7 +48,7 @@ public class RaceEventServlet extends HttpServlet {
 		
 		if(matcher.matches()){
 		
-			modelAndView = raceController.createNewRaceEvent();
+			modelAndView = null;//raceController.createNewRaceEvent();
 			
 		}
 		
