@@ -2,26 +2,17 @@ package models;
 
 import java.util.Date;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.inject.Inject;
 
+@Stateless
+@LocalBean
 public class RacePostController {
 
-	private HttpServletRequest request;
-	private HttpServletResponse response;
-	private RaceService raceService;
+    @Inject private RaceService raceService;
 
-	public RacePostController(HttpServletRequest request, HttpServletResponse response) {
-		this.request = request;
-		this.response = response;
-
-	}
-	
 	public ModelAndView createNewRaceEvent(){
-		//request.getParameters("....");
-		//Create raceEvent
-		//Add to database
-		
 		Date date = new Date();
 		RaceEvent race = new RaceEvent();
 		race.setRaceName("The Great upside-down crab walk");
@@ -35,11 +26,9 @@ public class RacePostController {
 		race.setRaceTwitterPage("Tweet");
 		race.setRaceType("Crab Walk");
 		
-		raceService.createRaceEvent(race);
-		ModelAndView model = new ModelAndView(race, "/WEB-INF/CreateRace.jsp");
+        raceService.createRaceEvent(race);
+		ModelAndView model = new ModelAndView(race, "/WEB-INF/RaceDetails.jsp");
 		return model;
 	}
-	
-	
-	
+
 }
