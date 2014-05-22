@@ -9,6 +9,7 @@ public class RacePostController {
 
 	private HttpServletRequest request;
 	private HttpServletResponse response;
+	private RaceService raceService;
 
 	public RacePostController(HttpServletRequest request, HttpServletResponse response) {
 		this.request = request;
@@ -24,7 +25,7 @@ public class RacePostController {
 		Date date = new Date();
 		RaceEvent race = new RaceEvent();
 		race.setRaceName("The Great upside-down crab walk");
-		race.setRaceCost(5D);
+		race.setRaceCost(5.00);
 		race.setImageFilePath("ImageFilePath");
 		race.setRaceDate(date);
 		race.setRaceDescription("describo");
@@ -34,6 +35,7 @@ public class RacePostController {
 		race.setRaceTwitterPage("Tweet");
 		race.setRaceType("Crab Walk");
 		
+		raceService.createRaceEvent(race);
 		ModelAndView model = new ModelAndView(race, "/WEB-INF/CreateRace.jsp");
 		return model;
 	}

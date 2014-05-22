@@ -30,8 +30,9 @@ public class DatabaseConnection extends BasicDataSource {
         this.jdbcURL = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
         this.jdbcDriver = "org.postgresql.Driver";
     }
-    @Override
-    public Logger getParentLogger() throws SQLFeatureNotSupportedException {
-        return Logger.getLogger("Dummy Logger");
-    }
+/*
+	@Override
+	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+		return Logger.getLogger("Dummy Logger");
+	}*/
 }

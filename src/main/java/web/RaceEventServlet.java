@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import models.ModelAndView;
 import models.RaceEvent;
 import models.RaceGetController;
+import models.RacePostController;
 
 
 @WebServlet("/race/*")
@@ -65,6 +66,15 @@ public class RaceEventServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		String uriString = request.getRequestURI();
+		ModelAndView modelAndView = null;
+		Pattern pattern = Pattern.compile(regexCreatePattern);
+		Matcher matcher = pattern.matcher(uriString);
+		RacePostController raceController = new RacePostController(request, response);
+		
+		if(matcher.matches()){
+			modelAndView = raceController.createNewRaceEvent();
+			
+		}
 	}
 }
