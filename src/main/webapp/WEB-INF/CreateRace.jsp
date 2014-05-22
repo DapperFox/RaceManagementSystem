@@ -9,6 +9,9 @@
 <title>Create Event</title>
 </head>
 <body>
+
+	<%@ include file="../WEB-INF/partials/header.jsp" %>
+
 	<div class="row">
 		<div class="col-md-2"></div>
 		<div class="col-md-10">
