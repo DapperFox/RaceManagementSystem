@@ -26,4 +26,5 @@ public class RaceService {
             em.remove(raceEvent);
         }
     }
+
 }
