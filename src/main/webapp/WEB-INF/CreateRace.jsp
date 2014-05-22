@@ -6,9 +6,62 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="" />
-<title>Create a new Race Event</title>
+<title>Create Event</title>
 </head>
 <body>
-	<h1>It verks!</h1>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-10">
+			<h1>Create Event</h1>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-5">		
+			<form role="form" method="POST" action="/race/create">
+		      <div class="form-group">
+		        <label class="control-label">Event Name</label>
+				<input type="text" class="form-control" name="name">
+		      </div>
+		      <label class="control-label">Event Type</label>
+		      <select class="form-control" name="type">
+				  <option>Running</option>
+				  <option>Cycling</option>
+				  <option>Tri</option>
+				  <option>Special</option>
+			  </select>
+			  <div class="form-group">
+		        <label class="control-label">Location</label>
+				<input type="text" class="form-control" name="location">
+		      </div>
+			  <div class="form-group">
+		        <label class="control-label">Date</label>
+				<input type="date" class="form-control" name="date">
+		      </div>
+		      <div class="form-group">
+		        <label class="control-label">Time</label>
+				<input type="time" class="form-control" name="time">
+		      </div>
+			  <div class="form-group">
+		        <label class="control-label">Cost</label>
+				<input type="number" step="any" class="form-control" name="cost">
+		      </div>
+			  <div class="form-group">
+		        <label class="control-label">Description</label>
+				<textarea class="form-control" rows="3"></textarea>
+		      </div>
+			  <div class="form-group">
+		        <label class="control-label">Twitter Page</label>
+				<input type="text" class="form-control" name="twitterPage">
+		      </div>
+		      <div class="form-group">
+		        <label class="control-label">Facebook page</label>
+				<input type="text" class="form-control" name="facebookPage">
+		      </div>
+		      <button type="submit" class="btn btn-default">Create Event</button>
+		    </form>
+		</div>
+	</div>
 </body>
 </html>
