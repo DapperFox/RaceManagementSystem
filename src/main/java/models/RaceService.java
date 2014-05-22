@@ -12,15 +12,18 @@ import javax.persistence.PersistenceContext;
 @LocalBean
 public class RaceService {
     @PersistenceContext(name="raceDataSource")
-    private EntityManager entityManager;
+    private EntityManager em;
 
     public RaceEvent getRaceEvent(Long id) {
-        return entityManager.find(RaceEvent.class, id);
+        return em.find(RaceEvent.class, id);
     }
     public void createRaceEvent(RaceEvent raceEvent) {
-        entityManager.persist(raceEvent);
+        em.persist(raceEvent);
     }
-    public void deleteRaceEvent(RaceEvent raceEvent) {
-        entityManager.remove(raceEvent);
+    public void deleteRaceEvent(Long id) {
+        RaceEvent raceEvent = em.find(RaceEvent.class, id);
+        if(raceEvent != null) {
+            em.remove(raceEvent);
+        }
     }
 }
