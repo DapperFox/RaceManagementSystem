@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,7 +21,19 @@ public class RacePostController {
 		//Create raceEvent
 		//Add to database
 		
-		RaceEvent race = null;
+		Date date = new Date();
+		RaceEvent race = new RaceEvent();
+		race.setRaceName("The Great upside-down crab walk");
+		race.setRaceCost(5D);
+		race.setImageFilePath("ImageFilePath");
+		race.setRaceDate(date);
+		race.setRaceDescription("describo");
+		race.setRaceFaceBookPage("facebookPageDawg");
+		race.setRaceLocation("race location");
+		race.setRaceTime("4 A.M.");
+		race.setRaceTwitterPage("Tweet");
+		race.setRaceType("Crab Walk");
+		
 		ModelAndView model = new ModelAndView(race, "/WEB-INF/CreateRace.jsp");
 		return model;
 	}
