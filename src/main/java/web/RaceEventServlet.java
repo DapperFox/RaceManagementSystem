@@ -62,8 +62,6 @@ public class RaceEventServlet extends HttpServlet {
 		request.setAttribute("raceEventModel", modelAndView.getModel());
 		RequestDispatcher view = request.getRequestDispatcher(modelAndView.getViewName());
 		view.forward(request, response);
-		
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
