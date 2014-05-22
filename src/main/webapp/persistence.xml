@@ -6,7 +6,7 @@
        http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
 
     <persistence-unit name="RaceManagement" transaction-type="JTA">
-        <jta-data-source>raceManagementDataSource</jta-data-source>
+        <jta-data-source>raceDataSource</jta-data-source>
         <class>models.RaceEvent</class>
         <properties>
             <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
