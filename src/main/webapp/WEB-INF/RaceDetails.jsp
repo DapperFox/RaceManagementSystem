@@ -5,15 +5,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="" />
+<link rel="stylesheet" href="../resources/style/main.css"/>
 <title>Race Event Details</title>
 </head>
 <body>
 	<%@ include file="../WEB-INF/partials/header.jsp" %>
 
-	<h1>${model.raceName}</h1>
-	<h2>${model.raceDescription }</h2>
-	<h2>${model.raceType }</h2>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<img alt="Race poster image" src="${model.imageFilePath}">	
+			</div>
+			<div class="col-md-8">
+				<h1>${model.raceName}</h1>
+				<h2>${model.raceLocation}</h2>
+				<h2>${model.raceDate}</h2>
+				<h2>${model.raceCost}</h2>
+				<span class="pull-right">
+					${model.raceTwitterPage}
+					&nbsp;&nbsp;
+					${model.raceFaceBookPage}
+				</span>
+				
+			</div>
+		</div>
+		
+		<div class="row">
+			<h2>${model.raceDescription}</h2>
+		</div>
+
+	</div>
 	
 	<%@ include file="../WEB-INF/partials/footer.jsp" %>
 </body>
