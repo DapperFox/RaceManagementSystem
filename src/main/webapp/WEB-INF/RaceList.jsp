@@ -11,6 +11,8 @@
 <body>
 	<%@ include file="../WEB-INF/partials/header.jsp" %>
 
+
+
 	<%@ include file="../WEB-INF/partials/footer.jsp" %>
 </body>
 </html>

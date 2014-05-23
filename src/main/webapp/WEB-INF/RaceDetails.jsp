@@ -12,6 +12,8 @@
 	<%@ include file="../WEB-INF/partials/header.jsp" %>
 
 	<h1>${model.raceName}</h1>
+	<h2>${model.raceDescription }</h2>
+	<h2>${model.raceType }</h2>
 	
 	<%@ include file="../WEB-INF/partials/footer.jsp" %>
 </body>
