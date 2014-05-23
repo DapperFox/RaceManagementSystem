@@ -4,13 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="" />
-<title>List of Race Events</title>
+<title>R.E.M.S.</title>
 </head>
 <body>
-	<%@ include file="../WEB-INF/partials/header.jsp" %>
-
-	<%@ include file="../WEB-INF/partials/footer.jsp" %>
+	<h3>Footer Information</h3>
 </body>
 </html>

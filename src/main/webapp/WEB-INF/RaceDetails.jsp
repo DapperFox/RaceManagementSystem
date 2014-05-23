@@ -9,6 +9,10 @@
 <title>Race Event Details</title>
 </head>
 <body>
+	<%@ include file="../WEB-INF/partials/header.jsp" %>
+
 	<h1>${model.raceName}</h1>
+	
+	<%@ include file="../WEB-INF/partials/footer.jsp" %>
 </body>
 </html>

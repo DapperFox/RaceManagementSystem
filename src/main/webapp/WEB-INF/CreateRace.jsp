@@ -12,16 +12,14 @@
 
 	<%@ include file="../WEB-INF/partials/header.jsp" %>
 
-	<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col-md-10">
+	<div class="container">
+
+		<div class="row">
 			<h1>Create Event</h1>
+			<hr />
 		</div>
-	</div>
-	
-	<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col-md-5">		
+		
+		<div class="row">	
 			<form role="form" method="POST" action="/race/create">
 		      <div class="form-group">
 		        <label class="control-label">Event Name</label>
@@ -31,7 +29,7 @@
 		      <select class="form-control" name="type">
 				  <option>Running</option>
 				  <option>Cycling</option>
-				  <option>Tri</option>
+				  <option>Triathlon</option>
 				  <option>Special</option>
 			  </select>
 			  <div class="form-group">
@@ -62,9 +60,12 @@
 		        <label class="control-label">Facebook page</label>
 				<input type="text" class="form-control" name="facebookPage">
 		      </div>
-		      <button type="submit" class="btn btn-default">Create Event</button>
+		      <button type="submit" class="btn btn-default pull-right">Create Event</button>
 		    </form>
 		</div>
+	
 	</div>
+	
+	<%@ include file="../WEB-INF/partials/footer.jsp" %>
 </body>
 </html>
