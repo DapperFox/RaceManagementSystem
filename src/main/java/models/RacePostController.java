@@ -15,23 +15,23 @@ import javax.servlet.http.HttpServletResponse;
 public class RacePostController {
 
     @Inject private RaceService raceService;
-    private @Autowired HttpServletRequest request;
+    @Inject private RequestInjectingServletRequestListener request;
 
 	public ModelAndView createNewRaceEvent(){
 		RaceEvent race = new RaceEvent();
 		
-		String dateAsString = request.getParameter("date");
+		String dateAsString = request.getInstance().getParameter("date");
 		Date date = formatDate(dateAsString);
 		
-		race.setRaceName(request.getParameter("name"));
-		race.setRaceType(request.getParameter("type"));
-		race.setRaceLocation(request.getParameter("location"));
+		race.setRaceName(request.getInstance().getParameter("name"));
+		race.setRaceType(request.getInstance().getParameter("type"));
+		race.setRaceLocation(request.getInstance().getParameter("location"));
 		race.setRaceDate(date);
-		race.setRaceTime(request.getParameter("time"));
-		race.setRaceCost(Double.parseDouble(request.getParameter("cost")));
-		race.setRaceDescription(request.getParameter("description"));
-		race.setRaceTwitterPage(request.getParameter("twitterPage"));
-		race.setRaceFaceBookPage(request.getParameter("facebookPage"));
+		race.setRaceTime(request.getInstance().getParameter("time"));
+		race.setRaceCost(Double.parseDouble(request.getInstance().getParameter("cost")));
+		race.setRaceDescription(request.getInstance().getParameter("description"));
+		race.setRaceTwitterPage(request.getInstance().getParameter("twitterPage"));
+		race.setRaceFaceBookPage(request.getInstance().getParameter("facebookPage"));
 //		race.setImageFilePath(request.getParameter("image"));
 		
         raceService.createRaceEvent(race);
