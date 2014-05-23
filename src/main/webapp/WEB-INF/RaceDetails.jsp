@@ -9,6 +9,6 @@
 <title>Race Event Details</title>
 </head>
 <body>
-	<h1>${raceEvent.raceName }</h1>
+	<h1>${model.raceName}</h1>
 </body>
 </html>
