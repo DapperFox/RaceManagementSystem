@@ -4,6 +4,8 @@ import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.util.List;
 
 /**
  * Created by blakebishop on 5/22/14.
@@ -16,6 +18,11 @@ public class RaceService {
 
     public RaceEvent getRaceEvent(Long id) {
         return em.find(RaceEvent.class, id);
+    }
+    public List getAllRaceEvents() {
+        Query query = em.createQuery("SELECT r FROM RaceEvent r");
+        List resultList = query.getResultList();
+        return resultList;
     }
     public void createRaceEvent(RaceEvent raceEvent) {
         em.persist(raceEvent);
