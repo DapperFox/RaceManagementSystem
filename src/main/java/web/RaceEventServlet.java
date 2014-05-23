@@ -20,25 +20,25 @@ import models.RacePostController;
 @WebServlet("/race/*")
 public class RaceEventServlet extends HttpServlet {
     @Inject
-    RacePostController raceController;
+    RacePostController racePostController;
+    @Inject
+    RaceGetController raceGetController;
 	private static final long serialVersionUID = 1L;
 	String regexCreatePattern = "/race/create";
 	String regexRacePattern = "(/race/)([0-9]+)(/[A-Za-z]*)?";
-	String regexRaceDetails = "/race/[0-9]+/RaceDetails";
+	String regexRaceDetails = "/race/([0-9]+)/raceDetails";
 	String regexRaceList = "/race/events";
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uriString = request.getRequestURI();
 		ModelAndView modelAndView = null;
-		RaceGetController raceController = new RaceGetController(request, response);
-		
 				
 		Pattern pattern = Pattern.compile(regexCreatePattern);
 		Matcher matcher = pattern.matcher(uriString);
 		
 		if(matcher.matches()){
-			modelAndView = raceController.createNewRaceEvent();
+			modelAndView = raceGetController.createNewRaceEvent();
 			
 		}
 		
@@ -58,6 +58,15 @@ public class RaceEventServlet extends HttpServlet {
 			
 		}
 		
+		pattern = Pattern.compile(regexRaceDetails);
+		matcher = pattern.matcher(uriString);
+		
+		if(matcher.find()){
+			Long id = Long.parseLong(matcher.group(1));
+			modelAndView = raceGetController.retrieveRace(id);
+			
+		}
+		
 		request.setAttribute("model", modelAndView.getModel());
 		RequestDispatcher view = request.getRequestDispatcher(modelAndView.getViewName());
 		view.forward(request, response);
@@ -70,7 +79,7 @@ public class RaceEventServlet extends HttpServlet {
 		Matcher matcher = pattern.matcher(uriString);
 		
 		if(matcher.matches()){
-			modelAndView = raceController.createNewRaceEvent();
+			modelAndView = racePostController.createNewRaceEvent();
             request.setAttribute("model", modelAndView.getModel());
             RequestDispatcher view = request.getRequestDispatcher(modelAndView.getViewName());
             view.forward(request, response);

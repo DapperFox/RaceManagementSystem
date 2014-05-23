@@ -3,18 +3,14 @@ package models;
 import java.awt.List;
 import java.util.ArrayList;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class RaceGetController {
-	private HttpServletRequest request;
-	private HttpServletResponse response;
-
-	public RaceGetController(HttpServletRequest request, HttpServletResponse response) {
-		this.request = request;
-		this.response = response;
-
-	}
+	
+	@Inject private RaceService raceService;
+	@Inject private RequestInjectingServletRequestListener request;
 	
 	public ModelAndView createNewRaceEvent(){
 		RaceEvent race = null;
@@ -24,7 +20,7 @@ public class RaceGetController {
 	
 	public ModelAndView retrieveRace(Long id){
 		//Get model by id
-		RaceEvent race = null;
+		RaceEvent race = raceService.getRaceEvent(id);
 		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/RaceEvent.jsp");
 		return modelAndView;
 	}
