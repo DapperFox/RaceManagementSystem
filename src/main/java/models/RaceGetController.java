@@ -19,7 +19,6 @@ public class RaceGetController {
 	}
 	
 	public ModelAndView retrieveRace(Long id){
-		//Get model by id
 		RaceEvent race = raceService.getRaceEvent(id);
 		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/RaceEvent.jsp");
 		return modelAndView;
@@ -31,6 +30,18 @@ public class RaceGetController {
 		
 		ModelAndView eventsModelAndView = new ModelAndView(raceEventList, "/WEB-INF/RaceList.jsp");
 		return eventsModelAndView;
+	}
+	
+	public ModelAndView updateRace(Long id){
+		RaceEvent race = raceService.getRaceEvent(id);
+		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/UpdateRace.jsp");
+		return modelAndView;
+	}
+	
+	public ModelAndView deleteRace(Long id){
+		//Remove race from database
+		//What do we want to return?
+		return null;
 	}
 
 	

@@ -18,6 +18,7 @@
 			</div>
 			<div class="col-md-8">
 				<h1>${model.raceName}</h1>
+				<h2>${model.id }</h2>
 				<h2>${model.raceLocation}</h2>
 				<h2>${model.raceDate}</h2>
 				<h2>${model.raceCost}</h2>

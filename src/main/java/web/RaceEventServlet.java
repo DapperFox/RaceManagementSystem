@@ -55,7 +55,12 @@ public class RaceEventServlet extends HttpServlet {
 		matcher = pattern.matcher(uriString);
 		
 		if(matcher.find()){
-			
+			if(matcher.group(3).equalsIgnoreCase("/update")){
+				modelAndView = raceGetController.updateRace(Long.parseLong(matcher.group(2)));
+			}
+			else if(matcher.group(3).equalsIgnoreCase("/delete")){
+				modelAndView = raceGetController.deleteRace(Long.parseLong(matcher.group(2)));
+			}
 		}
 		
 		pattern = Pattern.compile(regexRaceDetails);
