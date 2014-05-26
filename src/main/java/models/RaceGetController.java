@@ -20,7 +20,7 @@ public class RaceGetController {
 	
 	public ModelAndView retrieveRace(Long id){
 		RaceEvent race = raceService.getRaceEvent(id);
-		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/RaceEvent.jsp");
+		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/RaceDetails.jsp");
 		return modelAndView;
 	}
 	
@@ -39,9 +39,11 @@ public class RaceGetController {
 	}
 	
 	public ModelAndView deleteRace(Long id){
-		//Remove race from database
-		//What do we want to return?
-		return null;
+		raceService.deleteRaceEvent(id);
+		RaceEvent race = null;
+		//What jsp do we want this to forward to?
+		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/RaceList.jsp");
+		return modelAndView;
 	}
 
 	
