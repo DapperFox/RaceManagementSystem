@@ -21,7 +21,7 @@
 				<h2>${model.id }</h2>
 				<h2>${model.raceLocation}</h2>
 				<h2>${model.raceDate}</h2>
-				<h2>${model.raceCost}</h2>
+				<h2>${model.getFormattedCost() }</h2>
 				<span class="pull-right">
 					${model.raceTwitterPage}
 					&nbsp;&nbsp;

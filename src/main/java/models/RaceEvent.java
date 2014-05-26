@@ -1,5 +1,6 @@
 package models;
 
+import java.text.NumberFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -101,6 +102,11 @@ public class RaceEvent {
 
 	public void setRaceCost(Double raceCost) {
 		this.raceCost = raceCost;
+	}
+	
+	public String getFormattedCost() {
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		return formatter.format(raceCost);
 	}
 
 	public String getRaceType() {
