@@ -24,7 +24,7 @@
     </thead>
     <c:forEach var="i" begin="0" end="${model.size()}">
         <tr>
-            <td><a href="/race/${model.id}/raceDetails" ><c:out value="${model[i].raceName}"/></a></td>
+            <td><a href="/race/${model[i].id}/raceDetails" ><c:out value="${model[i].raceName}"/></a></td>
             <td><c:out value="${model[i].raceType}"/></td>
             <td><c:out value="${model[i].raceDescription}"/></td>
             <td><c:out value="${model[i].getFormattedCost()}"/></td>
