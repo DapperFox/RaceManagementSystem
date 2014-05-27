@@ -11,10 +11,25 @@
 </head>
 <body>
 	<%@ include file="../WEB-INF/partials/header.jsp" %>
-    <table>
+    <table class="table table-hover">
+    <thead>
+    	<tr>
+    		<th>Event Name</th>
+    		<th>Race Type</th>
+    		<th>Description</th>
+    		<th>Cost</th>
+    		<th>Date</th>
+    		<th>Time</th>
+    	</tr>
+    </thead>
     <c:forEach var="i" begin="0" end="${model.size()}">
         <tr>
-            <td><c:out value="${model[i].raceName}"/></td>
+            <td><a href="/race/${model.id}/raceDetails" ><c:out value="${model[i].raceName}"/></a></td>
+            <td><c:out value="${model[i].raceType}"/></td>
+            <td><c:out value="${model[i].raceDescription}"/></td>
+            <td><c:out value="${model[i].getFormattedCost()}"/></td>
+            <td><c:out value="${model[i].raceDate}"/></td>
+            <td><c:out value="${model[i].raceTime}"/></td>
         </tr>
     </c:forEach>
     </table>

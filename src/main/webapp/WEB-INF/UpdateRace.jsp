@@ -14,12 +14,12 @@
 	<div class="container">
 
 		<div class="row">
-			<h1>Create Event</h1>
+			<h1>Update Event</h1>
 			<hr />
 		</div>
 		
 		<div class="row">	
-			<form role="form" method="POST" action="/race/create">
+			<form role="form" method="POST" action="/race/${model.id }/update">
 		      <div class="form-group">
 		        <label class="control-label">Event Name</label>
 		        ${model.raceName }
@@ -60,7 +60,7 @@
 		        <label class="control-label">Facebook page</label>
 				<input type="text" class="form-control" name="facebookPage">
 		      </div>
-		      <button type="submit" class="btn btn-default pull-right">Create Event</button>
+		      <button type="submit" class="btn btn-default pull-right">Update Event</button>
 		    </form>
 		</div>
 	

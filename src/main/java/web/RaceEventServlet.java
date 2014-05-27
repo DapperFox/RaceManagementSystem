@@ -79,15 +79,27 @@ public class RaceEventServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uriString = request.getRequestURI();
-		ModelAndView modelAndView;
+		ModelAndView modelAndView = null;
 		Pattern pattern = Pattern.compile(regexCreatePattern);
 		Matcher matcher = pattern.matcher(uriString);
 		
 		if(matcher.matches()){
 			modelAndView = racePostController.createNewRaceEvent();
-            request.setAttribute("model", modelAndView.getModel());
-            RequestDispatcher view = request.getRequestDispatcher(modelAndView.getViewName());
-            view.forward(request, response);
+            
 		}
+		
+		pattern = Pattern.compile(regexRacePattern);
+		matcher = pattern.matcher(uriString);
+		
+		if(matcher.matches()){
+			if(matcher.group(3).equalsIgnoreCase("/update")){
+			modelAndView = racePostController.updateRace(Long.parseLong(matcher.group(2)));
+			}
+			
+		}
+		
+		request.setAttribute("model", modelAndView.getModel());
+        RequestDispatcher view = request.getRequestDispatcher(modelAndView.getViewName());
+        view.forward(request, response);
 	}
 }

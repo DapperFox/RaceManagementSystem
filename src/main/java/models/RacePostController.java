@@ -67,7 +67,7 @@ public class RacePostController {
 		race.setRaceFaceBookPage(request.getInstance().getParameter("facebookPage"));
 		
 		raceService.createRaceEvent(race);
-		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/raceDetails.jsp");
+		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/RaceDetails.jsp");
 		return modelAndView;
 		
 	}
