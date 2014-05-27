@@ -11,9 +11,13 @@
 </head>
 <body>
 	<%@ include file="../WEB-INF/partials/header.jsp" %>
-
-<p>${model.size()}</p>
-
+    <table>
+    <c:forEach var="i" begin="0" end="${model.size()}">
+        <tr>
+            <td><c:out value="${model[i].raceName}"/></td>
+        </tr>
+    </c:forEach>
+    </table>
 	<%@ include file="../WEB-INF/partials/footer.jsp" %>
 </body>
 </html>

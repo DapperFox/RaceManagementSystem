@@ -1,3 +1,30 @@
 body{
     background-color: #f2f2f2;
+    margin: 0 0 15em;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+/* Footer */
+footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding-top: 2em;
+	height: 15em;
+	width: 100%;
+	display: table;
+}
+
+footer .center-wrapper {
+	background-color: #332F28;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+footer .row {
+	margin-bottom: 1em;
 }
