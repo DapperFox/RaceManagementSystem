@@ -66,8 +66,8 @@ public class RacePostController {
 		race.setRaceTwitterPage(request.getInstance().getParameter("twitterPage"));
 		race.setRaceFaceBookPage(request.getInstance().getParameter("facebookPage"));
 		
-		//update race event on server
-		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/AuctionItem.jsp");
+		raceService.createRaceEvent(race);
+		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/raceDetails.jsp");
 		return modelAndView;
 		
 	}
