@@ -1,11 +1,8 @@
 package models;
 
-import java.awt.List;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 public class RaceGetController {
 	
@@ -25,7 +22,7 @@ public class RaceGetController {
 	}
 	
 	public ModelAndView retrieveRaceEventList() {
-		ArrayList<RaceEvent> raceEventList = new ArrayList<RaceEvent>();
+		List raceEventList = raceService.getAllRaceEvents();
 		
 		
 		ModelAndView eventsModelAndView = new ModelAndView(raceEventList, "/WEB-INF/RaceList.jsp");

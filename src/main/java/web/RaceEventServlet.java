@@ -47,7 +47,7 @@ public class RaceEventServlet extends HttpServlet {
 		
 		if(matcher.matches()){
 		
-			modelAndView = null;//raceController.createNewRaceEvent();
+			modelAndView = raceGetController.retrieveRaceEventList();
 			
 		}
 		
@@ -79,7 +79,7 @@ public class RaceEventServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uriString = request.getRequestURI();
-		ModelAndView modelAndView = null;
+		ModelAndView modelAndView;
 		Pattern pattern = Pattern.compile(regexCreatePattern);
 		Matcher matcher = pattern.matcher(uriString);
 		
