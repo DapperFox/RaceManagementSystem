@@ -22,8 +22,8 @@
 			<form role="form" method="POST" action="/race/${model.id }/update">
 		      <div class="form-group">
 		        <label class="control-label">Event Name</label>
-		        ${model.raceName }
-				<input type="text" class="form-control" name="name">
+		       
+				<input type="text" class="form-control" name="name" value=" ${model.raceName }">
 		      </div>
 		      <label class="control-label">Event Type</label>
 		      <select class="form-control" name="type">
@@ -34,31 +34,31 @@
 			  </select>
 			  <div class="form-group">
 		        <label class="control-label">Location</label>
-				<input type="text" class="form-control" name="location">
+				<input type="text" class="form-control" name="location" value="${model.raceLocation }">
 		      </div>
 			  <div class="form-group">
 		        <label class="control-label">Date</label>
-				<input type="date" class="form-control" name="date">
+				<input type="date" class="form-control" name="date" value="${model.getFormattedRaceDate() }">
 		      </div>
 		      <div class="form-group">
 		        <label class="control-label">Time</label>
-				<input type="time" class="form-control" name="time">
+				<input type="time" class="form-control" name="time" value="${model.raceTime }">
 		      </div>
 			  <div class="form-group">
 		        <label class="control-label">Cost</label>
-				<input type="number" step="any" class="form-control" name="cost">
+				<input type="number" step="any" class="form-control" name="cost" value="${model.raceCost }">
 		      </div>
 			  <div class="form-group">
 		        <label class="control-label">Description</label>
-				<textarea class="form-control" rows="3" name="description"></textarea>
+				<textarea class="form-control" rows="3" name="description">${model.raceDescription }</textarea>
 		      </div>
 			  <div class="form-group">
 		        <label class="control-label">Twitter Page</label>
-				<input type="text" class="form-control" name="twitterPage">
+				<input type="text" class="form-control" name="twitterPage" value="${model.raceTwitterPage }">
 		      </div>
 		      <div class="form-group">
 		        <label class="control-label">Facebook page</label>
-				<input type="text" class="form-control" name="facebookPage">
+				<input type="text" class="form-control" name="facebookPage" value="${model.raceFaceBookPage }">
 		      </div>
 		      <button type="submit" class="btn btn-default pull-right">Update Event</button>
 		    </form>

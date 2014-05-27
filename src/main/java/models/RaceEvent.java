@@ -87,6 +87,18 @@ public class RaceEvent {
 	public void setRaceDate(Date raceDate) {
 		this.raceDate = raceDate;
 	}
+	
+	public String getFormattedRaceDate(){
+		String raceDay = "";
+		if(raceDate.getDay()<10){
+			raceDay = "0"+raceDate.getDay();
+		}
+		else{
+			raceDay = ""+raceDate.getDay();
+		}
+		return ""+raceDate.getYear()+"-"+raceDate.getMonth() +"-"+ raceDay;
+	
+	}
 
 	public String getRaceTime() {
 		return raceTime;

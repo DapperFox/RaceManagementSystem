@@ -40,7 +40,7 @@ public class RacePostController {
 	private Date formatDate(String dateAsString){	
 			
 		Date date = null;
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm");
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
 		try{
 			date = simpleDateFormat.parse(dateAsString);
