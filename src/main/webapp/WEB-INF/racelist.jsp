@@ -25,14 +25,14 @@
 			    		<th>Time</th>
 			    	</tr>
 			    </thead>
-			    <c:forEach var="i" begin="0" end="${model.size()}">
+			    <c:forEach var="race" items="${model}">
 			        <tr>
-			            <td><a href="/race/${model[i].id}" ><c:out value="${model[i].raceName}"/></a></td>
-			            <td><c:out value="${model[i].raceType}"/></td>
-			            <td><c:out value="${model[i].raceDescription}"/></td>
-			            <td><c:out value="${model[i].getFormattedCost()}"/></td>
-			            <td><c:out value="${model[i].raceDate}"/></td>
-			            <td><c:out value="${model[i].raceTime}"/></td>
+			            <td><a href="/race/${race.id}" ><c:out value="${race.raceName}"/></a></td>
+			            <td><c:out value="${race.raceType}"/></td>
+			            <td><c:out value="${race.raceDescription}"/></td>
+			            <td><c:out value="${race.formattedCost}"/></td>
+			            <td><c:out value="${race.raceDate}"/></td>
+			            <td><c:out value="${race.raceTime}"/></td>
 			        </tr>
 			    </c:forEach>
 		    </table>

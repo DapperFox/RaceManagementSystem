@@ -11,7 +11,6 @@ import java.util.logging.Logger;
  * Created by blakebishop on 5/21/14.
  */
 public class DatabaseConnection extends BasicDataSource {
-    private String username, password, jdbcURL, jdbcDriver;
 
     public DatabaseConnection() {
         initConnection();
@@ -25,10 +24,10 @@ public class DatabaseConnection extends BasicDataSource {
             e.printStackTrace();
         }
 
-        this.username = dbUri.getUserInfo().split(":")[0];
-        this.password = dbUri.getUserInfo().split(":")[1];
-        this.jdbcURL = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
-        this.jdbcDriver = "org.postgresql.Driver";
+        super.setUsername(dbUri.getUserInfo().split(":")[0]);
+        super.setPassword(this.password = dbUri.getUserInfo().split(":")[1]);
+        super.setUrl("jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath());
+        super.setDriverClassName("org.postgresql.Driver");
     }
 
 	@Override

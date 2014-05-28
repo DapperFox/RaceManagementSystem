@@ -13,7 +13,7 @@ import java.util.List;
 @Stateless
 @LocalBean
 public class RaceService {
-    @PersistenceContext(name="raceDataSource")
+    @PersistenceContext(name="RaceManagement")
     private EntityManager em;
 
     public RaceEvent getRaceEvent(Long id) {

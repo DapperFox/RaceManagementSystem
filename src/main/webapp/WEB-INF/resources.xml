@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <Resource id="raceDataSource" type="models.DatabaseConnection" provider="Default JDBC Database"></Resource>
+    <Resource id="raceDataSource" type="DataSource" class-name="models.DatabaseConnection"></Resource>
 </resources>
