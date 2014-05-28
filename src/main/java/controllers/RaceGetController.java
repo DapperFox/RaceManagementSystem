@@ -30,7 +30,7 @@ public class RaceGetController {
 		List raceEventList = raceService.getAllRaceEvents();
 		
 		
-		ModelAndView eventsModelAndView = new ModelAndView(raceEventList, "/WEB-INF/raceList.jsp");
+		ModelAndView eventsModelAndView = new ModelAndView(raceEventList, "/WEB-INF/racelist.jsp");
 		return eventsModelAndView;
 	}
 	
@@ -44,7 +44,7 @@ public class RaceGetController {
 		raceService.deleteRaceEvent(id);
 		RaceEvent race = null;
 		//What jsp do we want this to forward to?
-		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/raceList.jsp");
+		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/racelist.jsp");
 		return modelAndView;
 	}
 
