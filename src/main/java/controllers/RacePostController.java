@@ -1,4 +1,9 @@
-package models;
+package controllers;
+
+import models.ModelAndView;
+import models.RaceEvent;
+import models.RaceService;
+import models.RequestInjectingServletRequestListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -33,7 +38,7 @@ public class RacePostController {
 //		race.setImageFilePath(request.getParameter("image"));
 		
         raceService.createRaceEvent(race);
-		ModelAndView model = new ModelAndView(race, "/WEB-INF/RaceDetails.jsp");
+		ModelAndView model = new ModelAndView(race, "/WEB-INF/racedetails.jsp");
 		return model;
 	}
 	
