@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.ModelAndView;
-import models.RaceGetController;
-import models.RacePostController;
+import controllers.RaceGetController;
+import controllers.RacePostController;
 
 @WebServlet("/race/*")
 public class RaceEventServlet extends HttpServlet {
