@@ -6,33 +6,39 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="../resources/style/main.css"/>
+<link rel="stylesheet" href="/resources/style/main.css"/>
 <title>List of Race Events</title>
 </head>
 <body>
 	<%@ include file="../WEB-INF/partials/header.jsp" %>
-    <table class="table table-hover">
-    <thead>
-    	<tr>
-    		<th>Event Name</th>
-    		<th>Race Type</th>
-    		<th>Description</th>
-    		<th>Cost</th>
-    		<th>Date</th>
-    		<th>Time</th>
-    	</tr>
-    </thead>
-    <c:forEach var="i" begin="0" end="${model.size()}">
-        <tr>
-            <td><a href="/race/${model[i].id}" ><c:out value="${model[i].raceName}"/></a></td>
-            <td><c:out value="${model[i].raceType}"/></td>
-            <td><c:out value="${model[i].raceDescription}"/></td>
-            <td><c:out value="${model[i].getFormattedCost()}"/></td>
-            <td><c:out value="${model[i].raceDate}"/></td>
-            <td><c:out value="${model[i].raceTime}"/></td>
-        </tr>
-    </c:forEach>
-    </table>
+	
+	<div class="container">
+		<div class="row">
+			<table class="table table-hover">
+			    <thead>
+			    	<tr>
+			    		<th>Event Name</th>
+			    		<th>Race Type</th>
+			    		<th>Description</th>
+			    		<th>Cost</th>
+			    		<th>Date</th>
+			    		<th>Time</th>
+			    	</tr>
+			    </thead>
+			    <c:forEach var="i" begin="0" end="${model.size()}">
+			        <tr>
+			            <td><a href="/race/${model[i].id}" ><c:out value="${model[i].raceName}"/></a></td>
+			            <td><c:out value="${model[i].raceType}"/></td>
+			            <td><c:out value="${model[i].raceDescription}"/></td>
+			            <td><c:out value="${model[i].getFormattedCost()}"/></td>
+			            <td><c:out value="${model[i].raceDate}"/></td>
+			            <td><c:out value="${model[i].raceTime}"/></td>
+			        </tr>
+			    </c:forEach>
+		    </table>
+		</div>
+	</div>
+	
 	<%@ include file="../WEB-INF/partials/footer.jsp" %>
 </body>
 </html>
