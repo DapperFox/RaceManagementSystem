@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <Resource id="raceDataSource" type="DataSource" class-name="models.DatabaseConnection"></Resource>
+    <Resource id="raceDataSource" type="DataSource">
+        jdbcDriver org.postgresql.Driver
+        jdbcUrl jdbc:postgresql://ec2-174-129-218-200.compute-1.amazonaws.com:5432/dah5han7jv331o?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory
+        userName xutptnofhukcgb
+        password AiifNJx9_9vb5d6M6mnrPTZJow
+    </Resource>
 </resources>
