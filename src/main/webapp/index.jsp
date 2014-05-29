@@ -13,6 +13,7 @@
     <script src="/resources/script/main.js"></script>
 </head>
 <body>
-    <h1>Testing Here</h1>
+    <h1>Home Page</h1>
+    <a href="/race/events">List o' races</a>
 </body>
 </html>
