@@ -20,13 +20,16 @@ public class Address {
 	@Column(name="zipCode")
 	private String zipCode;
 	
+	public Address(){
+		
+	}
+	
 	public Address(String address1, String address2, String city, String state, String zipCode){
 		this.address1 = address1;
 		this.address2 = address2;
 		this.city = city;
 		this.state = state;
 		this.zipCode = zipCode;
-	
 	}
 
 	public String getAddress1() {
@@ -35,7 +38,7 @@ public class Address {
 	
 	public String getAddress2() {
 		return address2;
-	}
+	} 
 	
 	public String getCity() {
 		return city;
@@ -48,6 +51,4 @@ public class Address {
 	public String getZipCode() {
 		return zipCode;
 	}
-	
-	
 }
