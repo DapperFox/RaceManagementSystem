@@ -27,16 +27,14 @@
 					&nbsp;&nbsp;
 					${model.raceFaceBookPage}
 				</span>
-				
 			</div>
 		</div>
-		
 		<div class="row">
 			<h2>${model.raceDescription}</h2>
 		</div>
-
 	</div>
 	
 	<%@ include file="../WEB-INF/partials/footer.jsp" %>
+	
 </body>
 </html>

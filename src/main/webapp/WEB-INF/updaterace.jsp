@@ -12,12 +12,10 @@
 	<%@ include file="../WEB-INF/partials/header.jsp" %>
 
 	<div class="container">
-
 		<div class="row">
 			<h1>Update Event</h1>
 			<hr />
 		</div>
-		
 		<div class="row">	
 			<form role="form" method="POST" action="/race/${model.id }/update">
 		      <div class="form-group">
@@ -63,9 +61,9 @@
 		      <button type="submit" class="btn btn-default pull-right">Update Event</button>
 		    </form>
 		</div>
-	
 	</div>
 	
 	<%@ include file="../WEB-INF/partials/footer.jsp" %>
+	
 </body>
 </html>

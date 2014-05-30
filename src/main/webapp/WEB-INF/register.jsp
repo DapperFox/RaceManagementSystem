@@ -17,7 +17,6 @@
 			<h1>Register</h1>
 			<hr />
 		</div>
-		
 		<div class="row">	
 			<form role="form" method="POST" action="/racer/register">
 		      <div class="form-group">
@@ -120,7 +119,6 @@
 		      <button type="submit" class="btn btn-default pull-right">Create Event</button>
 		    </form>
 		</div>
-	
 	</div>
 	
 	<%@ include file="../WEB-INF/partials/footer.jsp" %>

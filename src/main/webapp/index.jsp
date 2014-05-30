@@ -12,8 +12,22 @@
     <%--custom js--%>
     <script src="/resources/script/main.js"></script>
 </head>
-<body>
-    <h1>Home Page</h1>
-    <a href="/race/events">List o' races</a>
+<body>	
+		<%@ include file="../WEB-INF/partials/header.jsp" %>
+	
+		<div class="container">
+    		<div class="row">						
+				<form class="navbar-form" role="search" method="" action="">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search" name="search">
+						<div class="input-group-btn">
+							<button class="btn btn-default search-button" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+   		<%@ include file="../WEB-INF/partials/footer.jsp" %>
 </body>
 </html>
