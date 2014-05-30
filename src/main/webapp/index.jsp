@@ -26,6 +26,27 @@
 					</div>
 				</form>
 			</div>
+			
+			<div class="row">
+				<div class="jumbotron">
+					<p>Featured Event Here</p>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-3">
+					<img alt="Running" src="../resources/images/running.jpg" class="image-responsive raceTypeImage">	
+				</div>
+				<div class="col-md-3">
+					<img alt="Cycling" src="../resources/images/cycling.jpg" class="image-responsive raceTypeImage">	
+				</div>
+				<div class="col-md-3">
+					<img alt="Triathlon" src="../resources/images/triathlon.jpg" class="image-responsive raceTypeImage">	
+				</div>
+				<div class="col-md-3">
+					<img alt="Special" src="../resources/images/special.jpg" class="image-responsive raceTypeImage">	
+				</div>
+			</div>
 		</div>
 
    		<%@ include file="../WEB-INF/partials/footer.jsp" %>

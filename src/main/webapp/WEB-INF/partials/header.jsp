@@ -11,9 +11,9 @@
 	<div class="navbar navbar-default" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Race Event Management</a>
+            <a class="navbar-brand" href="/">Race Event Management</a>
             <ul class="nav navbar-nav">
-	            <li><a href="#">Home</a></li>
+	            <li><a href="/">Home</a></li>
 	            <li><a href="/race/events">Events</a></li>
 	        </ul>
           </div>
