@@ -71,18 +71,21 @@ public class RaceEventServlet extends HttpServlet {
 		if (matcher.matches()) {
 			Long id = Long.parseLong(matcher.group(1));
 			modelAndView = raceGetController.retrieveRace(id);
+			if(modelAndView.getModel() == null){
+				modelAndView = null;
+			}
 
 		}
 		if(modelAndView == null){
 			response.setStatus(404);
-			
-		}
-		//else{
+			RequestDispatcher errorView = request.getRequestDispatcher("/WEB-INF/404.jsp");
+			errorView.forward(request, response);
+		}else{
 		request.setAttribute("model", modelAndView.getModel());
 		RequestDispatcher view = request.getRequestDispatcher(modelAndView
 				.getViewName());
 		view.forward(request, response);
-		//}
+		}
 		
 		
 	}
@@ -107,12 +110,12 @@ public class RaceEventServlet extends HttpServlet {
 				modelAndView = racePostController.updateRace(Long
 						.parseLong(matcher.group(2)));
 			}
-
 		}
 
 		if(modelAndView == null){
 			response.setStatus(404);
-			
+			RequestDispatcher errorView = request.getRequestDispatcher("/WEB-INF/404.jsp");
+			errorView.forward(request, response);
 		}else{
 		request.setAttribute("model", modelAndView.getModel());
 		RequestDispatcher view = request.getRequestDispatcher(modelAndView
