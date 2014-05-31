@@ -24,6 +24,13 @@ public class RaceService {
         List resultList = query.getResultList();
         return resultList;
     }
+    
+    public List getRaceSearchResults(String queryString){
+    	Query query = em.createQuery("Select r From RaceEvent r WHERE r.raceName LIKE '%"+ queryString+"%'");
+    	List resultList = query.getResultList();
+    	return resultList;
+    }
+    
     public void createRaceEvent(RaceEvent raceEvent) {
         em.persist(raceEvent);
     }

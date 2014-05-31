@@ -7,11 +7,14 @@ import models.RequestInjectingServletRequestListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+
 
 @Stateless
 @LocalBean
@@ -74,6 +77,20 @@ public class RacePostController {
 		raceService.createRaceEvent(race);
 		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/racedetails.jsp");
 		return modelAndView;
+	}
+	
+	public ModelAndView registerForRace(Long raceId, Long racerId){
+		RaceEvent race = raceService.getRaceEvent(raceId);
+		//Add racer to race
+		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/racedetails.jsp");
+		return modelAndView;
+	}
+
+	public ModelAndView getSearchedRaces() {
 		
+		String query = request.getInstance().getParameter("search");
+		List<RaceEvent> searchedRaces = raceService.getRaceSearchResults(query);
+		ModelAndView modelAndView = new ModelAndView(searchedRaces, "/WEB-INF/racelist.jsp");
+		return modelAndView;
 	}
 }

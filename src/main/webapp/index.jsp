@@ -17,7 +17,7 @@
 	
 		<div class="container">
     		<div class="row">						
-				<form class="navbar-form" role="search" method="" action="">
+				<form class="navbar-form" role="search" method="post" action="/race/search">
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Search" name="search">
 						<div class="input-group-btn">

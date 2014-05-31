@@ -32,6 +32,9 @@
 		<div class="row">
 			<h2>${model.raceDescription}</h2>
 		</div>
+		<form role="form" method="POST" action="/race/${model.id}/register">
+		<button type="submit" class="btn btn-default pull-right">Register for race</button>
+		</form>
 	</div>
 	
 	<%@ include file="../WEB-INF/partials/footer.jsp" %>

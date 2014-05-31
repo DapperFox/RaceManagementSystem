@@ -27,6 +27,7 @@ public class RaceEventServlet extends HttpServlet {
 	String regexRacePattern = "(/race/)([0-9]+)(/[A-Za-z]*)";
 	String regexRaceDetails = "/race/([0-9]+)(/)?";
 	String regexRaceList = "/race/events";
+	String regexRaceSearch = "/race/search";
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -110,6 +111,18 @@ public class RaceEventServlet extends HttpServlet {
 				modelAndView = racePostController.updateRace(Long
 						.parseLong(matcher.group(2)));
 			}
+			else if(matcher.group(3).equalsIgnoreCase("/register")){
+				//modelAndView = racePostController.registerForRace(Long
+				//.parseLong(matcher.group(2), racerId);
+				
+			}
+		}
+		
+		pattern = Pattern.compile(regexRaceSearch);
+		matcher = pattern.matcher(uriString);
+		
+		if(matcher.matches()){
+			modelAndView = racePostController.getSearchedRaces();
 		}
 
 		if(modelAndView == null){
