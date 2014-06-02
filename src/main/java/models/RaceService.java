@@ -34,6 +34,7 @@ public class RaceService {
     public void createRaceEvent(RaceEvent raceEvent) {
         em.persist(raceEvent);
     }
+
     public void deleteRaceEvent(Long id) {
         RaceEvent raceEvent = em.find(RaceEvent.class, id);
         if(raceEvent != null) {

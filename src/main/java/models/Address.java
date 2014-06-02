@@ -1,14 +1,17 @@
 package models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="address")
 
 public class Address {
-	
+
+    @Id
+    @Column(name="id")
+    @SequenceGenerator(name="AddressSequence", sequenceName="address_seq", initialValue=1)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="AddressSequence")
+    private Long id;
 	@Column(name="address_one")
 	private String address1;
 	@Column(name="address_two")

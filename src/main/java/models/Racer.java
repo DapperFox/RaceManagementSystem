@@ -11,8 +11,8 @@ public class Racer {
 
 	@Id
 	@Column(name="id")
-	@SequenceGenerator(name="RaceEventSequence", sequenceName="raceEvent_seq", initialValue=1)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="RaceEventSequence")
+	@SequenceGenerator(name="RacerSequence", sequenceName="racer_seq", initialValue=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="RacerSequence")
 	private Long id;
 	
 	@Column(name="first_name")
@@ -96,6 +96,14 @@ public class Racer {
 		this.phoneNumber = phoneNumber;
 	}
 }
+    //racers is contained in RaceEvent
     @ManyToMany(mappedBy="racers")
     private Set<RaceEvent> racerEvents = new HashSet<RaceEvent>();
+
+    //results is contained in RaceEvent
+    @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
+    @JoinTable(name="racer_raceResult",
+            joinColumns=@JoinColumn(name="racer_id"),
+            inverseJoinColumns=@JoinColumn(name="raceResult_id"))
+    private Set<RaceResult> raceResults = new HashSet<RaceResult>();
 }

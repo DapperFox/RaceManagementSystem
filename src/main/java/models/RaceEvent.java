@@ -47,7 +47,19 @@ public class RaceEvent {
 	
 	@Column(name="faceBookPage")
 	private String raceFaceBookPage;
-	
+
+    @ManyToMany(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
+    @JoinTable(name="raceEvent_racer",
+            joinColumns=@JoinColumn(name="raceEvent_id"),
+            inverseJoinColumns=@JoinColumn(name="racer_id"))
+    private Set<Racer> racers = new HashSet<Racer>();
+
+    @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
+    @JoinTable(name="raceEvent_raceResult",
+            joinColumns=@JoinColumn(name="raceEvent_id"),
+            inverseJoinColumns=@JoinColumn(name="raceResult_id"))
+    private Set<RaceResult> results = new HashSet<RaceResult>();
+
 	public RaceEvent(){
 
 	}
@@ -152,11 +164,4 @@ public class RaceEvent {
 	public Long getId() {
 		return id;
 	}
-
-    @ManyToMany(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
-    @JoinTable(name="raceEvent_racer",
-            joinColumns=@JoinColumn(name="raceEvent_id"),
-            inverseJoinColumns=@JoinColumn(name="racer_id"))
-    private Set<Racer> racers = new HashSet<Racer>();
-	
 }
