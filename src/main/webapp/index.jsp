@@ -36,7 +36,7 @@
 		            <div class="carousel-caption">
 		              <h1>SLCycle</h1>
 		              <p class="lead">Cruise around Salt Lake City in a 50 miler.</p>
-		              <a class="btn btn-large btn-primary" href="/race/201">Register today</a>
+		              <a class="btn btn-large" href="/race/201">Register today</a>
 		            </div>
 		          </div>
 		        </div>

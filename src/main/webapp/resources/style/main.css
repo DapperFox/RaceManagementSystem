@@ -12,6 +12,16 @@ img{
 	border-radius: 1em;
 }
 
+.btn{
+	background-color: #23C48F;
+	color: #333;
+}
+
+.btn:hover{
+	background-color: #2AEDAD;
+	color: #FFF;
+}
+
 .search-button{
 	padding-top: 6px;
 	padding-bottom: 6px;

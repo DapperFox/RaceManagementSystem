@@ -18,10 +18,12 @@
 			</div>
 			<div class="col-md-8">
 				<h1>${model.raceName}</h1>
-				<h2>${model.id }</h2>
-				<h2>${model.raceLocation}</h2>
-				<h2>${model.raceDate}</h2>
-				<h2>${model.formattedCost }</h2>
+				<h3>Location</h3>
+					<h5>${model.raceLocation}</h5>
+				<h3>Date</h3>
+					<h5>${model.raceDate}</h5>
+				<h3>Cost</h3>
+					<h5>${model.formattedCost}</h5>
 				<span class="pull-right">
 					${model.raceTwitterPage}
 					&nbsp;&nbsp;
@@ -30,10 +32,10 @@
 			</div>
 		</div>
 		<div class="row">
-			<h2>${model.raceDescription}</h2>
+			<p>${model.raceDescription}</p>
 		</div>
 		<form role="form" method="POST" action="/race/${model.id}/register">
-		<button type="submit" class="btn btn-default pull-right">Register for race</button>
+		<button type="submit" class="btn btn-default pull-right">Register</button>
 		</form>
 	</div>
 	
