@@ -40,5 +40,8 @@ public class RaceService {
             em.remove(raceEvent);
         }
     }
-
+    
+    public void createRacer(Racer racer){
+    	em.persist(racer);
+    }
 }

@@ -29,7 +29,7 @@
 		      </div>
 		      <div class="form-group">
 			    <label class="contorl-label">Email Address</label>
-			    <input type="email" class="form-control">
+			    <input type="email" class="form-control" name="email">
 			  </div>
 			  <div class="form-group">
 			  	<label class="control-label">Gender</label>
@@ -113,10 +113,10 @@
 		      </div>
 		      <div class="form-group">
 		        <label class="control-label">Zip Code</label>
-				<input type="text" class="form-control" name="city" pattern="\d{5}">
+				<input type="text" class="form-control" pattern="\d{5}" name="zip">
 		      </div>
   
-		      <button type="submit" class="btn btn-default pull-right">Create Event</button>
+		      <button type="submit" class="btn btn-default pull-right">Register</button>
 		    </form>
 		</div>
 	</div>

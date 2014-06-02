@@ -8,6 +8,10 @@ html {
 	min-height: 100%;
 }
 
+.loggedInUser{
+	padding-top: 15px;
+}
+
 img{
 	border-radius: 1em;
 }

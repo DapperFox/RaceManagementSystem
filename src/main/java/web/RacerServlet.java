@@ -49,12 +49,11 @@ public class RacerServlet extends HttpServlet {
         Matcher matcher = pattern.matcher(uriString);
 
         if(matcher.matches()){
-            modelAndView = racerGetController.createNewRacer();
+            modelAndView = racerPostController.createNewRacer();
             //todo fix this so it persists the user information
             request.setAttribute("model", modelAndView.getModel());
             RequestDispatcher view = request.getRequestDispatcher(modelAndView.getViewName());
             view.forward(request, response);
         }
-
     }
 }
