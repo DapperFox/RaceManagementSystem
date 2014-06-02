@@ -5,6 +5,8 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
+
 import java.util.List;
 
 /**
@@ -26,9 +28,12 @@ public class RaceService {
     }
     
     public List getRaceSearchResults(String queryString){
-    	Query query = em.createQuery("Select r From RaceEvent r WHERE r.raceName LIKE '%"+ queryString+"%'");
-    	List resultList = query.getResultList();
-    	return resultList;
+    	//return em.createNamedQuery("searchQuery").setParameter("raceEvent", queryString).getResultList();
+    	return em.createQuery(
+    	        "Select r From RaceEvent r WHERE r.raceName LIKE :raceEvent")
+    	        .setParameter("raceEvent", queryString)
+    	        .getResultList();
+    	 
     }
     
     public void createRaceEvent(RaceEvent raceEvent) {

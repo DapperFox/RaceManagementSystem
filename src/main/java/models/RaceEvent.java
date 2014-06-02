@@ -3,12 +3,15 @@ package models;
 import javax.persistence.*;
 import java.text.NumberFormat;
 import java.util.Date;
+
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name="raceEvent")
-
+@NamedQueries({
+	@NamedQuery(name="searchQuery", query="Select r From RaceEvent r WHERE r.raceName LIKE :raceEvent")
+})
 public class RaceEvent {
 
 	@Id

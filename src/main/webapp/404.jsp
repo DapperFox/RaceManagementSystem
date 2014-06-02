@@ -16,7 +16,7 @@
 		
 		<div class="container">
 			<div class="row">
-				<h1> Crap...We haven't built that page yet.</h1>
+				<h1> Oh poop...We haven't built that page yet.</h1>
 				<h4> We'll get to it right after we finish building a link where you can download a free snowcone.</h4>
 			</div>
 		</div>
