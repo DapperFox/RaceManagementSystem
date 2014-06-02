@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -27,12 +28,25 @@
 				</form>
 			</div>
 			
-			<div class="row">
-				<div class="jumbotron">
-					<p>Featured Event Here</p>
-				</div>
-			</div>
-			
+			<div id="myCarousel" class="carousel slide">
+		      <div class="carousel-inner">
+		        <div class="item active">
+		          <img src="../resources/images/triBanner.jpg" alt="">
+		          <div class="container">
+		            <div class="carousel-caption">
+		              <h1>SLCycle</h1>
+		              <p class="lead">Cruise around Salt Lake City in a 50 miler.</p>
+		              <a class="btn btn-large btn-primary" href="/race/201">Register today</a>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		      <!-- 
+		      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&#60;</a>
+		      <a class="right carousel-control" href="#myCarousel" data-slide="next">&#62;</a>
+		      -->
+		    </div>
+		
 			<div class="row">
 				<div class="col-md-3">
 					<img alt="Running" src="../resources/images/running.jpg" class="image-responsive raceTypeImage">	
@@ -47,6 +61,7 @@
 					<img alt="Special" src="../resources/images/special.jpg" class="image-responsive raceTypeImage">	
 				</div>
 			</div>
+			
 		</div>
 
    		<%@ include file="../WEB-INF/partials/footer.jsp" %>
