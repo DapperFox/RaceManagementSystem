@@ -95,7 +95,6 @@ public class Racer {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-}
     //racers is contained in RaceEvent
     @ManyToMany(mappedBy="racers")
     private Set<RaceEvent> racerEvents = new HashSet<RaceEvent>();

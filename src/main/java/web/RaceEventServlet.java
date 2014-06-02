@@ -1,8 +1,8 @@
 package web;
 
-import java.io.IOException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import controllers.RaceGetController;
+import controllers.RacePostController;
+import models.ModelAndView;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -11,10 +11,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import models.ModelAndView;
-import controllers.RaceGetController;
-import controllers.RacePostController;
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @WebServlet("/race/*")
 public class RaceEventServlet extends HttpServlet {

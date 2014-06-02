@@ -2,8 +2,6 @@ package models;
 
 import org.apache.commons.dbcp.BasicDataSource;
 
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.sql.SQLFeatureNotSupportedException;
 import java.util.logging.Logger;
 

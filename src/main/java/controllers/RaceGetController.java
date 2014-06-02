@@ -5,9 +5,8 @@ import models.RaceEvent;
 import models.RaceService;
 import models.RequestInjectingServletRequestListener;
 
-import java.util.List;
-
 import javax.inject.Inject;
+import java.util.List;
 
 public class RaceGetController {
 	
