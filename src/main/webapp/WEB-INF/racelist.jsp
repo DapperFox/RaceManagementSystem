@@ -43,8 +43,11 @@
 
 				<c:forEach var="race" items="${model}">
 					<tr>
-						<td><a href="/race/${race.id}"><c:out
-									value="${race.raceName}" /></a></td>
+						<td>
+                            <a href="/race/${race.id}">
+                                <c:out value="${race.raceName}" />
+                            </a>
+                        </td>
 						<td><c:out value="${race.raceType}" /></td>
 						<td><c:out value="${race.raceDescription}" /></td>
 						<td><c:out value="${race.formattedCost}" /></td>
