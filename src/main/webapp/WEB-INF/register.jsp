@@ -29,7 +29,7 @@
 		      </div>
 		      <div class="form-group">
 			    <label class="contorl-label">Email Address</label>
-			    <input type="email" class="form-control" name="email">
+			    <input type="email" class="form-control" name="email" title="Please enter a valid email address.">
 			  </div>
 			  <div class="form-group">
 			  	<label class="control-label">Gender</label>
@@ -41,6 +41,10 @@
 			  <div class="form-group">
 		        <label class="control-label">Birthday</label>
 				<input type="date" class="form-control" name="birthDate">
+		      </div>
+		      <div class="form-group">
+		        <label class="control-label">Phone Number</label>
+				<input type="tel" class="form-control" name="phoneNumber" pattern="[0-9]{10}" title="Please enter a valid phone number.">
 		      </div>
 		      <div class="form-group">
 		        <label class="control-label">Address 1</label>
@@ -113,7 +117,7 @@
 		      </div>
 		      <div class="form-group">
 		        <label class="control-label">Zip Code</label>
-				<input type="text" class="form-control" pattern="\d{5}" name="zip">
+				<input type="text" class="form-control" pattern="\d{5}" name="zip" title="Please enter a valid zip code.">
 		      </div>
   
 		      <button type="submit" class="btn btn-default pull-right">Register</button>

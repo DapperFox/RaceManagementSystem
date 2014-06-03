@@ -27,6 +27,7 @@ public class RacerPostController {
 		racer.setEmail(request.getInstance().getParameter("email"));
 		racer.setGender(request.getInstance().getParameter("gender"));
 		racer.setBirthDate(request.getInstance().getParameter("birthDate"));
+		racer.setPhoneNumber(request.getInstance().getParameter("phoneNumber"));
 		
 		Address address = new Address(address1, address2, city, state, zipCode);
 		
