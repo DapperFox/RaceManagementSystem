@@ -37,6 +37,10 @@ public class RaceService {
     	 
     }
     
+    public Racer getRacer(Long id){
+    	return em.find(Racer.class, id);
+    }
+    
     public void createRaceEvent(RaceEvent raceEvent) {
         em.persist(raceEvent);
     }

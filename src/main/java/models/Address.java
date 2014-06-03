@@ -8,7 +8,7 @@ import javax.persistence.*;
 public class Address {
 
     @Id
-    @Column(name="id")
+    @Column(name="address_id")
     @SequenceGenerator(name="AddressSequence", sequenceName="address_seq", initialValue=1)
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="AddressSequence")
     private Long id;
@@ -39,10 +39,14 @@ public class Address {
 		return address1;
 	}
 	
+	public Long getId() {
+		return id;
+	}
+
 	public String getAddress2() {
 		return address2;
 	} 
-	
+
 	public String getCity() {
 		return city;
 	}
@@ -53,5 +57,26 @@ public class Address {
 	
 	public String getZipCode() {
 		return zipCode;
+	}
+	
+	
+	public void setAddress1(String address1) {
+		this.address1 = address1;
+	}
+
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
 	}
 }

@@ -111,8 +111,8 @@ public class RaceEventServlet extends HttpServlet {
 						.parseLong(matcher.group(2)));
 			}
 			else if(matcher.group(3).equalsIgnoreCase("/register")){
-				//modelAndView = racePostController.registerForRace(Long
-				//.parseLong(matcher.group(2), racerId);
+				modelAndView = racePostController.registerForRace(Long
+				.parseLong(matcher.group(2)), 51L);
 				
 			}
 		}

@@ -29,13 +29,18 @@ public class Racer {
 	
 	@Column(name="birth_date")
 	private String birthDate;
-	
-	@Column(name="address")
+		
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="address_id")
 	private Address address;
 	
 	@Column(name="phone_number")
 	private String phoneNumber;
 
+	public Racer(){
+		
+	}
+	
 	public Long getId() {
 		return id;
 	}

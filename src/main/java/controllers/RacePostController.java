@@ -3,6 +3,7 @@ package controllers;
 import models.ModelAndView;
 import models.RaceEvent;
 import models.RaceService;
+import models.Racer;
 import models.RequestInjectingServletRequestListener;
 
 import javax.ejb.LocalBean;
@@ -79,7 +80,9 @@ public class RacePostController {
 	
 	public ModelAndView registerForRace(Long raceId, Long racerId){
 		RaceEvent race = raceService.getRaceEvent(raceId);
+		Racer racer = raceService.getRacer(racerId);
 		//Add racer to race
+		race.addRacerToRaceEvent(racer);
 		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/racedetails.jsp");
 		return modelAndView;
 	}

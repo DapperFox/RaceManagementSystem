@@ -66,6 +66,10 @@ public class RaceEvent {
 
 	}
 	
+	public void addRacerToRaceEvent(Racer racer){
+		racers.add(racer);
+	}
+	
 	public String getRaceName() {
 		return raceName;
 	}
