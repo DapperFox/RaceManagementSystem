@@ -53,10 +53,10 @@ public class RaceEvent {
             inverseJoinColumns=@JoinColumn(name="racer_id"))
     private Set<Racer> racers = new HashSet<Racer>();
 
-    @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
-    @JoinTable(name="raceEvent_raceResult",
-            joinColumns=@JoinColumn(name="raceEvent_id"),
-            inverseJoinColumns=@JoinColumn(name="raceResult_id"))
+    @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST, mappedBy="racerEvents")
+//    @JoinTable(name="raceEvent_raceResult",
+//            joinColumns=@JoinColumn(name="raceEvent_id"),
+//            inverseJoinColumns=@JoinColumn(name="raceResult_id"))
     private Set<RaceResult> results = new HashSet<RaceResult>();
 
 	public RaceEvent(){

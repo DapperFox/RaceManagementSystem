@@ -23,10 +23,12 @@ public class RaceResult {
     private int racePosition;
 
     @ManyToOne
-    private RaceEvent racerEvents = new RaceEvent();
+    @JoinColumn(name="raceEvent_id")
+    private RaceEvent racerEvents;
 
     @ManyToOne
-    private Racer racer = new Racer();
+    @JoinColumn(name="racer_id")
+    private Racer racer;
 
     public RaceResult() {
 
@@ -48,4 +50,19 @@ public class RaceResult {
         this.raceTime = new Timestamp(raceTime);
     }
 
+    public RaceEvent getRacerEvents() {
+        return racerEvents;
+    }
+
+    public void setRacerEvents(RaceEvent racerEvents) {
+        this.racerEvents = racerEvents;
+    }
+
+    public Racer getRacer() {
+        return racer;
+    }
+
+    public void setRacer(Racer racer) {
+        this.racer = racer;
+    }
 }

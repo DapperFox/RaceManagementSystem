@@ -100,9 +100,9 @@ public class Racer {
     private Set<RaceEvent> racerEvents = new HashSet<RaceEvent>();
 
     //results is contained in RaceEvent
-    @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
-    @JoinTable(name="racer_raceResult",
-            joinColumns=@JoinColumn(name="racer_id"),
-            inverseJoinColumns=@JoinColumn(name="raceResult_id"))
+    @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST, mappedBy="racer")
+//    @JoinTable(name="racer_raceResult",
+//            joinColumns=@JoinColumn(name="racer_id"),
+//            inverseJoinColumns=@JoinColumn(name="raceResult_id"))
     private Set<RaceResult> raceResults = new HashSet<RaceResult>();
 }
