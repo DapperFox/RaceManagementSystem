@@ -28,10 +28,11 @@ public class RaceService {
     }
     
     public List getRaceSearchResults(String queryString){
+    	String query = queryString.toLowerCase();
     	//return em.createNamedQuery("searchQuery").setParameter("raceEvent", queryString).getResultList();
     	return em.createQuery(
-    	        "Select r From RaceEvent r WHERE r.raceName LIKE :raceEvent")
-    	        .setParameter("raceEvent", queryString)
+    	        "Select r From RaceEvent r WHERE LOWER(r.raceName) LIKE :raceEvent")
+    	        .setParameter("raceEvent", "%"+query+"%")
     	        .getResultList();
     	 
     }
