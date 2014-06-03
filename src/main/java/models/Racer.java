@@ -30,7 +30,7 @@ public class Racer {
 	@Column(name="birth_date")
 	private String birthDate;
 		
-	@OneToOne(fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="address_id")
 	private Address address;
 	
