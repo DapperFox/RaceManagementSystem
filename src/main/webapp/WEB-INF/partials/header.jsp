@@ -23,6 +23,7 @@
 	            <c:choose>
 	            	<c:when test="${user.loggedIn}">
 		            	<li class="loggedInUser">Welcome, ${user.firstName }!</li>
+		            	<li><a href="/logout">Logout</a></li>
 		            </c:when>
 		            <c:otherwise>
 		            	<li><a href="#">Login</a></li>

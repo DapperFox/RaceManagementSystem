@@ -9,7 +9,9 @@
 <title>Race Event Details</title>
 </head>
 <body>
-	<%@ include file="../WEB-INF/partials/header.jsp" %>
+	<jsp:include page="/WEB-INF/partials/header.jsp">
+		<jsp:param value="user" name="user"/>
+	</jsp:include>
 
 	<div class="container">
 		<div class="row">
