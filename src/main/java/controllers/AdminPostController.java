@@ -20,7 +20,7 @@ public class AdminPostController {
     @Inject private RequestInjectingServletRequestListener request;
     @Inject PasswordEncoder passwordEncoder;
 
-    public ModelAndView createNewRacer() {
+    public ModelAndView createNewAdmin() {
 				    	
         String username = request.getInstance().getParameter("username");
 		String password = request.getInstance().getParameter("password");
@@ -30,8 +30,10 @@ public class AdminPostController {
 		admin.setPassword(passwordEncoder.encode(password));
 		
 		raceService.createAdmin(admin);
+		//Don't pass in the the admin
+		//...use the admin to get all their races and pass in that list
 				
-		ModelAndView modelAndView = new ModelAndView(admin, "/index.jsp");
+		ModelAndView modelAndView = new ModelAndView(admin, "/WEB-INF/admindashboard.jsp");
 
         return modelAndView;
     }

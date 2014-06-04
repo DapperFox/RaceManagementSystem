@@ -27,6 +27,8 @@ public class AdminServlet extends HttpServlet {
 
     String regexRegister = "/admin/register";
     String regexLogin = "/admin/login";
+    
+    
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uriString = request.getRequestURI();
         ModelAndView modelAndView = null;
@@ -50,7 +52,7 @@ public class AdminServlet extends HttpServlet {
         Matcher matcher = pattern.matcher(uriString);
 
         if(matcher.matches()){
-            modelAndView = adminPostController.createNewRacer();
+            modelAndView = adminPostController.createNewAdmin();
             
         }
         
