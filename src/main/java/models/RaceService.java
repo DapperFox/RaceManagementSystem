@@ -55,4 +55,8 @@ public class RaceService {
     public void createRacer(Racer racer){
     	em.persist(racer);
     }
+    
+    public void createAdmin(Admin admin){
+    	em.persist(admin);
+    }
 }

@@ -59,7 +59,6 @@ public class Address {
 		return zipCode;
 	}
 	
-	
 	public void setAddress1(String address1) {
 		this.address1 = address1;
 	}

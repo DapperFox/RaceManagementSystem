@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.*;
+
 import java.text.NumberFormat;
 import java.util.Date;
 
@@ -49,6 +50,11 @@ public class RaceEvent {
 	
 	@Column(name="faceBookPage")
 	private String raceFaceBookPage;
+	
+	@ManyToOne
+	@JoinColumn(name="admin_id")
+	private Admin admin;
+	
 
     @ManyToMany(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
     @JoinTable(name="raceEvent_racer",
