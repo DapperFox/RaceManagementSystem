@@ -19,8 +19,8 @@
 		<div class="row">	
 			<form role="form" method="POST" action="/admin/register">
 		      <div class="form-group">
-		        <label class="control-label">Username</label>
-				<input type="text" class="form-control" name="username">
+		        <label class="control-label">Email</label>
+				<input type="text" class="form-control" name="email">
 		      </div>
 		      <div class="form-group">
 		        <label class="control-label">Password</label>

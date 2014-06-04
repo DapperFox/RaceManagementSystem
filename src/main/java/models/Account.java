@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,8 +28,19 @@ public class Account {
     @OneToMany(fetch=FetchType.EAGER, mappedBy="account", cascade={CascadeType.PERSIST, CascadeType.REMOVE})
     private Set<AccountRole> roles = new HashSet<>();
 
+    @OneToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinColumn(name="admin_id")
+	private Admin admin;
 
-    public String getId() {
+    public Admin getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Admin admin) {
+		this.admin = admin;
+	}
+
+	public String getId() {
         return id;
     }
 

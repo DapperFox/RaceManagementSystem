@@ -4,12 +4,14 @@ import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import models.Account;
 import models.Address;
 import models.Admin;
 import models.ModelAndView;
 import models.RaceService;
 import models.Racer;
 import models.RequestInjectingServletRequestListener;
+import models.Role;
 import security.*;
 
 @Stateless
@@ -22,14 +24,17 @@ public class AdminPostController {
 
     public ModelAndView createNewAdmin() {
 				    	
-        String username = request.getInstance().getParameter("username");
+        String email = request.getInstance().getParameter("email");
 		String password = request.getInstance().getParameter("password");
 		
-		Admin admin = new Admin();
-		admin.setUsername(username);
-		admin.setPassword(passwordEncoder.encode(password));
+		Account account = new Account();
+		account.setEmail(email);
+		account.setPassword(passwordEncoder.encode(password));
+		account.addRole(Role.ADMIN);
 		
-		raceService.createAdmin(admin);
+		Admin admin = new Admin();
+		account.setAdmin(admin);		
+		raceService.createAccount(account);
 		//Don't pass in the the admin
 		//...use the admin to get all their races and pass in that list
 				

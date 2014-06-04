@@ -56,8 +56,8 @@ public class RaceService {
     	em.persist(racer);
     }
     
-    public void createAdmin(Admin admin){
-    	em.persist(admin);
+    public void createAccount(Account account){
+    	em.persist(account);
     }
 	public List getRaceResultsList(Long id) {
 		em.find(RaceEvent.class, id);
