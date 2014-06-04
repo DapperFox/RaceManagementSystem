@@ -21,8 +21,8 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
 	            <c:choose>
-	            	<c:when test="${isLoggedIn}">
-		            	<li class="loggedInUser">Welcome, ${firstName }!</li>
+	            	<c:when test="${user.loggedIn}">
+		            	<li class="loggedInUser">Welcome, ${user.firstName }!</li>
 		            </c:when>
 		            <c:otherwise>
 		            	<li><a href="#">Login</a></li>
