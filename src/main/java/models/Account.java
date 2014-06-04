@@ -2,6 +2,7 @@ package models;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by blakebishop on 6/4/14.
@@ -54,7 +55,7 @@ public class Account {
     public void addRole(Role user) {
         AccountRole accountRole = new AccountRole();
         accountRole.setRole(user);
-        accountRole.setUsername(username);
+        accountRole.setEmail(email);
         roles.add(accountRole);
     }
 
