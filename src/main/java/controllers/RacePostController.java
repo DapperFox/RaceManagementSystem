@@ -39,6 +39,8 @@ public class RacePostController {
 		race.setRaceFaceBookPage(request.getInstance().getParameter("facebookPage"));
 //		race.setImageFilePath(request.getParameter("image"));
 		
+		//We need to add the race creator to the race event
+		
         raceService.createRaceEvent(race);
 		ModelAndView model = new ModelAndView(race, "/WEB-INF/racedetails.jsp");
 		return model;

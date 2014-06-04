@@ -20,12 +20,12 @@
 		<div class="row">	
 			<form role="form" method="POST" action="/admin/register">
 		      <div class="form-group">
-		        <label class="control-label">First Name</label>
+		        <label class="control-label">Username</label>
 				<input type="text" class="form-control" name="username">
 		      </div>
 		      <div class="form-group">
-		        <label class="control-label">Last Name</label>
-				<input type="text" class="form-control" name="password">
+		        <label class="control-label">Password</label>
+				<input type="password" class="form-control" name="password">
 		      </div>
 		      
   
