@@ -59,4 +59,10 @@ public class RaceService {
     public void createAdmin(Admin admin){
     	em.persist(admin);
     }
+	public List getRaceResultsList(Long id) {
+		em.find(RaceEvent.class, id);
+		Query query = em.createQuery("SELECT r FROM RaceResult r");
+        List resultList = query.getResultList();
+        return resultList;
+	}
 }

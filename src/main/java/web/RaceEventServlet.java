@@ -61,6 +61,9 @@ public class RaceEventServlet extends HttpServlet {
 				} else if (matcher.group(3).equalsIgnoreCase("/delete")) {
 					modelAndView = raceGetController.deleteRace(Long
 							.parseLong(matcher.group(2)));
+				} else if (matcher.group(3).equalsIgnoreCase("/results")) {
+					modelAndView = raceGetController.getResultsList(Long
+							.parseLong(matcher.group(2)));
 				}
 			}
 		}

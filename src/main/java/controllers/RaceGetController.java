@@ -46,6 +46,15 @@ public class RaceGetController {
 		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/racelist.jsp");
 		return modelAndView;
 	}
+	
+	public ModelAndView getResultsList(Long id){
+		//Get the list from the service
+		
+		RaceEvent raceEvent = raceService.getRaceEvent(id);
+		raceEvent.get
+		ModelAndView modelAndView = new ModelAndView(raceEventList, "/WEB-INF/raceresultslist.jsp");
+		return modelAndView;
+	}
 
 	
 }

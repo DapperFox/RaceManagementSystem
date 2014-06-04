@@ -12,7 +12,6 @@
 	<%@ include file="../WEB-INF/partials/header.jsp" %>
 
 	<div class="container">
-
 		<div class="row">
 			<h1>Register</h1>
 			<hr />
