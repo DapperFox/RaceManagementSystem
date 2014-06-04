@@ -24,7 +24,7 @@ public class RaceResult {
 
     @ManyToOne
     @JoinColumn(name="raceEvent_id")
-    private RaceEvent racerEvents;
+    private RaceEvent racerEvent;
 
     @ManyToOne
     @JoinColumn(name="racer_id")
@@ -51,11 +51,11 @@ public class RaceResult {
     }
 
     public RaceEvent getRacerEvents() {
-        return racerEvents;
+        return racerEvent;
     }
 
     public void setRacerEvents(RaceEvent racerEvents) {
-        this.racerEvents = racerEvents;
+        this.racerEvent = racerEvents;
     }
 
     public Racer getRacer() {
