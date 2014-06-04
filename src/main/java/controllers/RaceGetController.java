@@ -2,11 +2,13 @@ package controllers;
 
 import models.ModelAndView;
 import models.RaceEvent;
+import models.RaceResult;
 import models.RaceService;
 import models.RequestInjectingServletRequestListener;
 
 import javax.inject.Inject;
 import java.util.List;
+import java.util.Set;
 
 public class RaceGetController {
 	
@@ -51,8 +53,8 @@ public class RaceGetController {
 		//Get the list from the service
 		
 		RaceEvent raceEvent = raceService.getRaceEvent(id);
-		raceEvent.get
-		ModelAndView modelAndView = new ModelAndView(raceEventList, "/WEB-INF/raceresultslist.jsp");
+		Set<RaceResult> results = raceEvent.getResults();
+		ModelAndView modelAndView = new ModelAndView(results, "/WEB-INF/raceresultslist.jsp");
 		return modelAndView;
 	}
 
