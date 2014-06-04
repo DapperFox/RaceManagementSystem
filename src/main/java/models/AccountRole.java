@@ -21,8 +21,8 @@ public class AccountRole {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="account_role_seq")
 	private Long id;
 	
-	@Column(name="username")
-	private String username;
+	@Column(name="email")
+	private String email;
 	
 	@Column(name="role")
 	@Enumerated(EnumType.STRING)
@@ -40,12 +40,12 @@ public class AccountRole {
 		this.id = id;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setEmail(String username) {
+		this.email = username;
 	}
 
 	public Role getRole() {
