@@ -3,16 +3,23 @@ package controllers;
 
 import models.*;
 
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
+
+import security.PasswordEncoder;
 
 /**
  * Created by blakebishop on 5/28/14.
  */
+@Stateless
+@LocalBean
 public class RacerPostController {
     @Inject
     private RaceService raceService;
     @Inject private RequestInjectingServletRequestListener request;
-
+    @Inject PasswordEncoder passwordEncoder;
+    
     public ModelAndView createNewRacer() {
 		Racer racer = new Racer();
 		
@@ -21,6 +28,8 @@ public class RacerPostController {
 		String city = request.getInstance().getParameter("city");
 		String state = request.getInstance().getParameter("state");
 		String zipCode = request.getInstance().getParameter("zip");
+		
+		String password = request.getInstance().getParameter("password");
 		
 		racer.setFirstName(request.getInstance().getParameter("firstName"));
 		racer.setLastName(request.getInstance().getParameter("lastName"));
@@ -32,7 +41,7 @@ public class RacerPostController {
 		Address address = new Address(address1, address2, city, state, zipCode);
 		
 		racer.setAddress(address);
-		
+		racer.setPassword(passwordEncoder.encode(password));
     	raceService.createRacer(racer);
     	
         ModelAndView modelAndView = new ModelAndView(racer, "/index.jsp");

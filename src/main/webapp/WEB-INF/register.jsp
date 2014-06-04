@@ -32,6 +32,10 @@
 			    <input type="email" class="form-control" name="email" title="Please enter a valid email address.">
 			  </div>
 			  <div class="form-group">
+			    <label class="contorl-label">Password</label>
+			    <input type="password" class="form-control" name="password" title="Please enter a strong password.">
+			  </div>
+			  <div class="form-group">
 			  	<label class="control-label">Gender</label>
 		      	<select class="form-control" name="gender">
 				  <option>Male</option>
