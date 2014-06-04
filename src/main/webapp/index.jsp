@@ -14,8 +14,12 @@
     <script src="/resources/script/main.js"></script>
 </head>
 <body>	
-		<%@ include file="../WEB-INF/partials/header.jsp" %>
-	
+
+		<c:set var="user" value='<%= session.getAttribute("user") %>'></c:set>
+		<jsp:include page="/WEB-INF/partials/header.jsp">
+			<jsp:param value="user" name="user"/>
+		</jsp:include>
+		
 		<div class="container">
     		<div class="row">						
 				<form class="navbar-form" role="search" method="post" action="/race/search">

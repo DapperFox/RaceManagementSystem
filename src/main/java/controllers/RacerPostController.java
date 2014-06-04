@@ -6,6 +6,7 @@ import models.*;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import security.PasswordEncoder;
 
@@ -43,9 +44,9 @@ public class RacerPostController {
 		racer.setAddress(address);
 		racer.setPassword(passwordEncoder.encode(password));
     	raceService.createRacer(racer);
-    	
+        racer.setLoggedIn(true);
+   	
         ModelAndView modelAndView = new ModelAndView(racer, "/index.jsp");
-
         return modelAndView;
     }
 }

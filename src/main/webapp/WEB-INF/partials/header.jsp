@@ -20,15 +20,15 @@
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-	            <%--<c:choose>--%>
-	            	<%--<c:when test="${isUserLoggedIn}">--%>
-		            	<%--<li class="loggedInUser">Welcome, ${model.firstName }!</li>--%>
-		            <%--</c:when>--%>
-		            <%--<c:otherwise>--%>
-		            	<%--<li><a href="#">Login</a></li>--%>
-		              	<%--<li><a href="/racer/register">Register</a></li>--%>
-		            <%--</c:otherwise>--%>
-	            <%--</c:choose>--%>
+	            <c:choose>
+	            	<c:when test="${isLoggedIn}">
+		            	<li class="loggedInUser">Welcome, ${firstName }!</li>
+		            </c:when>
+		            <c:otherwise>
+		            	<li><a href="#">Login</a></li>
+		              	<li><a href="/racer/register">Register</a></li>
+		           </c:otherwise>
+	            </c:choose>
             </ul>
           </div>
         </div>

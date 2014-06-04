@@ -39,6 +39,17 @@ public class Racer {
 	
 	@Column(name="phone_number")
 	private String phoneNumber;
+	
+	@Transient
+	private boolean isLoggedIn = false;
+
+	public boolean isLoggedIn() {
+		return isLoggedIn;
+	}
+
+	public void setLoggedIn(boolean isLoggedIn) {
+		this.isLoggedIn = isLoggedIn;
+	}
 
 	public Racer(){
 		

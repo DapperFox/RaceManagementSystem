@@ -11,6 +11,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -51,6 +53,10 @@ public class RacerServlet extends HttpServlet {
         if(matcher.matches()){
             modelAndView = racerPostController.createNewRacer();
             //todo fix this so it persists the user information
+            
+            HttpSession session = request.getSession();
+            session.setAttribute("user", modelAndView.getModel());
+
             request.setAttribute("model", modelAndView.getModel());
             RequestDispatcher view = request.getRequestDispatcher(modelAndView.getViewName());
             view.forward(request, response);
