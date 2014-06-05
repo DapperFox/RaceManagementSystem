@@ -1,12 +1,26 @@
 package models;
 
-import javax.persistence.*;
-
 import java.text.NumberFormat;
 import java.util.Date;
-
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="raceEvent")
@@ -56,7 +70,7 @@ public class RaceEvent {
 	private Admin admin;
 	
 
-    @ManyToMany(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
+    @ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
     @JoinTable(name="raceEvent_racer",
             joinColumns=@JoinColumn(name="raceEvent_id"),
             inverseJoinColumns=@JoinColumn(name="racer_id"))

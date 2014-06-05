@@ -20,7 +20,7 @@ public class RaceResult {
     private Timestamp raceTime;
 
     @Column(name="racePosition")
-    private int racePosition;
+    private Integer racePosition;
 
     @ManyToOne
     @JoinColumn(name="raceEvent_id")
@@ -34,11 +34,11 @@ public class RaceResult {
 
     }
 
-    public int getRacePosition() {
+    public Integer getRacePosition() {
         return racePosition;
     }
 
-    public void setRacePosition(int racePosition) {
+    public void setRacePosition(Integer racePosition) {
         this.racePosition = racePosition;
     }
 
