@@ -26,6 +26,7 @@ public class RaceEventServlet extends HttpServlet {
 	String regexRacePattern = "(/race/)([0-9]+)(/[A-Za-z]*)";
 	String regexRaceDetails = "/race/([0-9]+)(/)?";
 	String regexRaceList = "/race/events";
+	String regexSpecificRaceList = "(/race/)(events)(/[A-Za-z]*)";
 	String regexRaceSearch = "/race/search";
 
 	protected void doGet(HttpServletRequest request,
@@ -38,7 +39,6 @@ public class RaceEventServlet extends HttpServlet {
 
 		if (matcher.matches()) {
 			modelAndView = raceGetController.createNewRaceEvent();
-
 		}
 
 		pattern = Pattern.compile(regexRaceList);
@@ -47,7 +47,24 @@ public class RaceEventServlet extends HttpServlet {
 		if (matcher.matches()) {
 
 			modelAndView = raceGetController.retrieveRaceEventList();
+		}
+		
+		pattern = Pattern.compile(regexSpecificRaceList);
+		matcher = pattern.matcher(uriString);
 
+		if (matcher.matches()) {
+			if (matcher.group(3) != null) {
+				if (matcher.group(3).equalsIgnoreCase("/running")) {
+					//modelAndView = raceGetController.updateRace(Long.parseLong(matcher.group(2)));
+					modelAndView = raceGetController.retrieveSpecificRaceEventList("running");
+				} else if (matcher.group(3).equalsIgnoreCase("/cycling")) {
+					//modelAndView = raceGetController.deleteRace(Long.parseLong(matcher.group(2)));
+				} else if (matcher.group(3).equalsIgnoreCase("/triathlon")) {
+					//modelAndView = raceGetController.getResultsList(Long.parseLong(matcher.group(2)));
+				} else if (matcher.group(3).equalsIgnoreCase("/special")) {
+					//modelAndView = raceGetController.getResultsList(Long.parseLong(matcher.group(2)));
+				}
+			}
 		}
 
 		pattern = Pattern.compile(regexRacePattern);

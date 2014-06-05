@@ -52,17 +52,21 @@
 		    </div>
 		
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-3 raceType">
 					<img alt="Running" src="../resources/images/running.jpg" class="image-responsive raceTypeImage">	
+					<a class="btn btn-large" href="/race/events/running">Running</a>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3 raceType">
 					<img alt="Cycling" src="../resources/images/cycling.jpg" class="image-responsive raceTypeImage">	
+					<a class="btn btn-large" href="#">Cycling</a>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3 raceType">
 					<img alt="Triathlon" src="../resources/images/triathlon.jpg" class="image-responsive raceTypeImage">	
+					<a class="btn btn-large" href="#">Triathlon</a>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3 raceType">
 					<img alt="Special" src="../resources/images/special.jpg" class="image-responsive raceTypeImage">	
+					<a class="btn btn-large" href="#">Special</a>
 				</div>
 			</div>
 			

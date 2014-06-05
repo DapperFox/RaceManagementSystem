@@ -30,6 +30,12 @@ public class RaceGetController {
 	public ModelAndView retrieveRaceEventList() {
 		List raceEventList = raceService.getAllRaceEvents();
 		
+		ModelAndView eventsModelAndView = new ModelAndView(raceEventList, "/WEB-INF/racelist.jsp");
+		return eventsModelAndView;
+	}
+	
+	public ModelAndView retrieveSpecificRaceEventList(String raceType) {
+		List raceEventList = raceService.getAllRaceEvents(raceType);
 		
 		ModelAndView eventsModelAndView = new ModelAndView(raceEventList, "/WEB-INF/racelist.jsp");
 		return eventsModelAndView;

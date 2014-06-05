@@ -21,10 +21,18 @@ public class RaceService {
     public RaceEvent getRaceEvent(Long id) {
         return em.find(RaceEvent.class, id);
     }
+    
     public List getAllRaceEvents() {
         Query query = em.createQuery("SELECT r FROM RaceEvent r");
         List resultList = query.getResultList();
         return resultList;
+    }
+    
+    public List getAllRaceEvents(String raceType) {
+    	return em.createQuery(
+    	        "Select r From RaceEvent r WHERE r.raceType LIKE :raceType")
+    	        .setParameter("raceEvent", "%"+raceType+"%")
+    	        .getResultList();
     }
     
     public List getRaceSearchResults(String queryString){
