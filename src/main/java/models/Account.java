@@ -19,16 +19,31 @@ public class Account {
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="account_seq")
     private String id;
 
+    
     @Column(name="email", unique=true)
     private String email;
 
     @Column(name="password")
     private String password;
 
-    @OneToMany(fetch=FetchType.EAGER, mappedBy="account", cascade={CascadeType.PERSIST, CascadeType.REMOVE})
-    private Set<AccountRole> roles = new HashSet<>();
-
     @OneToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+    @JoinColumn(name="account_id")
+    private AccountRole role;
+    //@OneToMany(fetch=FetchType.EAGER, mappedBy="account", cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+    //private Set<AccountRole> roles = new HashSet<>();
+
+    public AccountRole getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		AccountRole accountRole = new AccountRole();
+        accountRole.setRole(role);
+        accountRole.setEmail(email);
+		this.role = accountRole;
+	}
+
+	@OneToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinColumn(name="admin_id")
 	private Admin admin;
 
@@ -76,7 +91,9 @@ public class Account {
         this.password = password;
     }
 
-    public void addRole(Role user) {
+    
+    
+    /*public void addRole(Role user) {
         AccountRole accountRole = new AccountRole();
         accountRole.setRole(user);
        // accountRole.setEmail(email);
@@ -90,5 +107,5 @@ public class Account {
             }
         }
         return false;
-    }
+    }*/
 }

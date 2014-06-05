@@ -16,21 +16,22 @@ import javax.persistence.Table;
 @Table(name="accountRole")
 public class AccountRole {
 	@Id
-	@Column(name="id")
+	@Column(name="account_id")
 	@SequenceGenerator(name="account_role_seq", sequenceName="account_role_seq", initialValue=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="account_role_seq")
 	private Long id;
 	
-	//@Column(name="email")
-	//private String email;
+	
+	@Column(name="email")
+	private String email;
 	
 	@Column(name="role")
 	@Enumerated(EnumType.STRING)
 	private Role role;
 
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name="account_id")
-	private Account account;
+	private Account account;*/
 	
 	public Long getId() {
 		return id;
@@ -40,13 +41,13 @@ public class AccountRole {
 		this.id = id;
 	}
 
-	/*public String getEmail() {
+	public String getEmail() {
 		return email;
 	}
 
 	public void setEmail(String username) {
 		this.email = username;
-	}*/
+	}
 
 	public Role getRole() {
 		return role;

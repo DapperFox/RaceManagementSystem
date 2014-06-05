@@ -30,7 +30,7 @@ public class AdminPostController {
 		Account account = new Account();
 		account.setEmail(email);
 		account.setPassword(passwordEncoder.encode(password));
-		account.addRole(Role.ADMIN);
+		account.setRole(Role.ADMIN);
 		
 		Admin admin = new Admin();
 		account.setAdmin(admin);		

@@ -30,11 +30,11 @@
 				<input type="text" class="form-control" name="lastName">
 		      </div>
 		      <div class="form-group">
-			    <label class="contorl-label">Email Address</label>
+			    <label class="control-label">Email Address</label>
 			    <input type="email" class="form-control" name="email" title="Please enter a valid email address.">
 			  </div>
 			  <div class="form-group">
-			    <label class="contorl-label">Password</label>
+			    <label class="control-label">Password</label>
 			    <input type="password" class="form-control" name="password" title="Please enter a strong password.">
 			  </div>
 			  <div class="form-group">

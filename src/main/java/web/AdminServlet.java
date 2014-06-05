@@ -38,7 +38,7 @@ public class AdminServlet extends HttpServlet {
         
         if(matcher.matches()){
             modelAndView = adminGetController.createNewAdmin();        
-    }
+        }
         request.setAttribute("model", modelAndView.getModel());
         RequestDispatcher view = request.getRequestDispatcher(modelAndView.getViewName());
         view.forward(request, response);
