@@ -32,7 +32,19 @@ public class Account {
 	@JoinColumn(name="admin_id")
 	private Admin admin;
 
-    public Admin getAdmin() {
+    @OneToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	@JoinColumn(name="racer_id")
+	private Racer racer;
+    
+    public Racer getRacer() {
+		return racer;
+	}
+
+	public void setRacer(Racer racer) {
+		this.racer = racer;
+	}
+
+	public Admin getAdmin() {
 		return admin;
 	}
 
@@ -67,7 +79,7 @@ public class Account {
     public void addRole(Role user) {
         AccountRole accountRole = new AccountRole();
         accountRole.setRole(user);
-        accountRole.setEmail(email);
+       // accountRole.setEmail(email);
         roles.add(accountRole);
     }
 

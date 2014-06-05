@@ -31,10 +31,9 @@ public class RacerPostController {
 		String zipCode = request.getInstance().getParameter("zip");
 		
 		String password = request.getInstance().getParameter("password");
-		
+		String email = request.getInstance().getParameter("email");
 		racer.setFirstName(request.getInstance().getParameter("firstName"));
 		racer.setLastName(request.getInstance().getParameter("lastName"));
-		racer.setEmail(request.getInstance().getParameter("email"));
 		racer.setGender(request.getInstance().getParameter("gender"));
 		racer.setBirthDate(request.getInstance().getParameter("birthDate"));
 		racer.setPhoneNumber(request.getInstance().getParameter("phoneNumber"));
@@ -42,9 +41,14 @@ public class RacerPostController {
 		Address address = new Address(address1, address2, city, state, zipCode);
 		
 		racer.setAddress(address);
-		racer.setPassword(passwordEncoder.encode(password));
-    	raceService.createRacer(racer);
         racer.setLoggedIn(true);
+        
+        Account account = new Account();
+        account.addRole(Role.RACER);
+        account.setRacer(racer);
+        account.setEmail(email);
+        account.setPassword(passwordEncoder.encode(password));
+        raceService.createAccount(account);
    	
         ModelAndView modelAndView = new ModelAndView(racer, "/index.jsp");
         return modelAndView;
