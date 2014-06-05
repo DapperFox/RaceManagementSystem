@@ -52,7 +52,6 @@ public class RacerServlet extends HttpServlet {
 
         if(matcher.matches()){
             modelAndView = racerPostController.createNewRacer();
-            //todo fix this so it persists the user information
             
             HttpSession session = request.getSession();
             session.setAttribute("user", modelAndView.getModel());

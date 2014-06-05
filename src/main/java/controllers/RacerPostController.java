@@ -44,9 +44,9 @@ public class RacerPostController {
         racer.setLoggedIn(true);
         
         Account account = new Account();
-        account.setRole(Role.RACER);
         account.setRacer(racer);
         account.setEmail(email);
+        account.setRole(Role.RACER);
         account.setPassword(passwordEncoder.encode(password));
         raceService.createAccount(account);
    	
