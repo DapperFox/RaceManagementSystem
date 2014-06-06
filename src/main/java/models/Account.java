@@ -17,7 +17,7 @@ public class Account {
     @Column(name="id")
     @SequenceGenerator(name="account_seq", sequenceName="account_seq", initialValue=1)
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="account_seq")
-    private String id;
+    private Long id;
 
     
     @Column(name="email", unique=true)
@@ -27,7 +27,7 @@ public class Account {
     private String password;
 
     @OneToOne(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-    @JoinColumn(name="account_id")
+    @JoinColumn(name="accountrole_id")
     private AccountRole role;
     //@OneToMany(fetch=FetchType.EAGER, mappedBy="account", cascade={CascadeType.PERSIST, CascadeType.REMOVE})
     //private Set<AccountRole> roles = new HashSet<>();
@@ -67,11 +67,11 @@ public class Account {
 		this.admin = admin;
 	}
 
-	public String getId() {
+	public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
