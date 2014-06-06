@@ -67,6 +67,8 @@ public class RaceService {
     public void createAccount(Account account){
     	em.persist(account);
     }
+
+    public void getAccount(Long id) { em.find(Account.class, id); }
 	public List getRaceResultsList(Long id) {
 		em.find(RaceEvent.class, id);
 		Query query = em.createQuery("SELECT r FROM RaceResult r");
