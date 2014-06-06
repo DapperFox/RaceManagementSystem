@@ -39,7 +39,7 @@ public class AdminPostController {
 		//Don't pass in the the admin
 		//...use the admin to get all their races and pass in that list
 		HttpSession session = request.getInstance().getSession();
-		session.setAttribute("accountID", account.getId());
+		session.setAttribute("adminID", admin.getId());
 		ModelAndView modelAndView = new ModelAndView(admin, "/WEB-INF/admindashboard.jsp");
 
         return modelAndView;

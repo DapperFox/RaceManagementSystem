@@ -29,7 +29,7 @@ public class RacePostController {
 	public ModelAndView createNewRaceEvent(){
 		RaceEvent race = new RaceEvent();
 		HttpSession session = request.getInstance().getSession();
-		Long id = (Long)session.getAttribute("accountID");
+		Long id = (Long)session.getAttribute("adminID");
 		Admin admin = raceService.getAdmin(id);
 		String dateAsString = request.getInstance().getParameter("date");
 		Date date = formatDate(dateAsString);
@@ -43,11 +43,8 @@ public class RacePostController {
 		race.setRaceDescription(request.getInstance().getParameter("description"));
 		race.setRaceTwitterPage(request.getInstance().getParameter("twitterPage"));
 		race.setRaceFaceBookPage(request.getInstance().getParameter("facebookPage"));
-		//race.setAdmin(admin);
-//		race.setImageFilePath(request.getParameter("image"));
-		
-		//We need to add the race creator to the race event
-		admin.addRaceToAdmin(race);
+
+        race.setAdmin(admin);
         raceService.createRaceEvent(race);
 		ModelAndView model = new ModelAndView(race, "/WEB-INF/racedetails.jsp");
 		return model;
