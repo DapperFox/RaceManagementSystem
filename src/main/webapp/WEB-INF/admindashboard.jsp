@@ -25,7 +25,8 @@
 						<th>Event Details</th>
 					</tr>
 				</thead>
-
+				
+				<c:if test="${model != null }">
 				<c:forEach var="race" items="${model}">
 					<tr>
 						<td><a href="/race/${race.id}"> <c:out
@@ -38,6 +39,7 @@
 						<td><c:out value="${race.raceTime}" /></td>
 					</tr>
 				</c:forEach>
+				</c:if>
 
 			</table>
 		</div>

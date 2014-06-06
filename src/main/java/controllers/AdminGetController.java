@@ -1,10 +1,14 @@
 package controllers;
 
+import java.util.List;
+import java.util.Set;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import models.Admin;
 import models.ModelAndView;
+import models.RaceEvent;
 import models.RaceService;
 import models.Racer;
 import models.RequestInjectingServletRequestListener;
@@ -29,11 +33,14 @@ public class AdminGetController {
 	}
 
 	public ModelAndView adminDashboard() {
+		Set<RaceEvent> list = null;
+		if(request.getInstance().getSession().getAttribute("adminID") != null){
 		HttpSession session = request.getInstance().getSession();
-		Long id = (Long)session.getAttribute("accountID");
+		Long id = (Long)session.getAttribute("adminID");
 		Admin admin = raceService.getAdmin(id);
-		
-		ModelAndView modelAndView = new ModelAndView(admin, "/WEB-INF/admindashboard.jsp");
+		list = admin.getRaceList();
+		}
+		ModelAndView modelAndView = new ModelAndView(list, "/WEB-INF/admindashboard.jsp");
 		
 		return modelAndView;
 	} 

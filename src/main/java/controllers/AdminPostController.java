@@ -41,7 +41,7 @@ public class AdminPostController {
 		HttpSession session = request.getInstance().getSession();
 		session.setAttribute("adminID", admin.getId());
 
-		ModelAndView modelAndView = new ModelAndView(admin, "/WEB-INF/admindashboard.jsp");
+		ModelAndView modelAndView = new ModelAndView(null, "/WEB-INF/admindashboard.jsp");
 
         return modelAndView;
     }
@@ -49,7 +49,7 @@ public class AdminPostController {
 	public ModelAndView adminLogin() {
 		//get account id and authenticate it
 		HttpSession session = request.getInstance().getSession();
-		Long id = (Long) session.getAttribute("accountID");
+		Long id = (Long) session.getAttribute("adminID");
 		Admin admin = new Admin();
 		/*Account acount = 
 		if(id == id){
