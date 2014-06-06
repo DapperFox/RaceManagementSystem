@@ -29,6 +29,14 @@ public class Admin {
 	@OneToMany(fetch=FetchType.EAGER, mappedBy="admin", cascade={CascadeType.PERSIST, CascadeType.REMOVE})
 	private Set<RaceEvent> raceList = new HashSet<RaceEvent>();
 	
+	public Set<RaceEvent> getRaceList() {
+		return raceList;
+	}
+
+	public void addRaceToAdmin(RaceEvent race) {
+		this.raceList.add(race);
+	}
+
 	public Admin(){
 		
 	}

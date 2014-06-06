@@ -43,12 +43,11 @@ public class RacePostController {
 		race.setRaceDescription(request.getInstance().getParameter("description"));
 		race.setRaceTwitterPage(request.getInstance().getParameter("twitterPage"));
 		race.setRaceFaceBookPage(request.getInstance().getParameter("facebookPage"));
-		race.setAdmin(admin);
-		//race.setAdmin()
+		//race.setAdmin(admin);
 //		race.setImageFilePath(request.getParameter("image"));
 		
 		//We need to add the race creator to the race event
-		
+		admin.addRaceToAdmin(race);
         raceService.createRaceEvent(race);
 		ModelAndView model = new ModelAndView(race, "/WEB-INF/racedetails.jsp");
 		return model;
