@@ -27,6 +27,7 @@ public class AdminServlet extends HttpServlet {
 
     String regexRegister = "/admin/register";
     String regexLogin = "/admin/login";
+    String regextAdminDashboard = "/admin";
     
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -44,6 +45,12 @@ public class AdminServlet extends HttpServlet {
         matcher = pattern.matcher(uriString);
         if(matcher.matches()){
         	modelAndView = adminGetController.adminLogin();
+        }
+        
+        pattern = Pattern.compile(regextAdminDashboard);
+        matcher = pattern.matcher(uriString);
+        if(matcher.matches()){
+        	modelAndView = adminGetController.adminDashboard();
         }
         
         request.setAttribute("model", modelAndView.getModel());

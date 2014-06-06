@@ -26,7 +26,7 @@
 					</tr>
 				</thead>
 
-				<%-- <c:forEach var="race" items="${model}">
+				<c:forEach var="race" items="${model}">
 					<tr>
 						<td><a href="/race/${race.id}"> <c:out
 									value="${race.raceName}" />
@@ -37,7 +37,7 @@
 						<td><c:out value="${race.raceDate}" /></td>
 						<td><c:out value="${race.raceTime}" /></td>
 					</tr>
-				</c:forEach> --%>
+				</c:forEach>
 
 			</table>
 		</div>

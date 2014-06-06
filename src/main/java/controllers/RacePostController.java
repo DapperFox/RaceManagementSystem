@@ -45,6 +45,9 @@ public class RacePostController {
 		race.setRaceFaceBookPage(request.getInstance().getParameter("facebookPage"));
 
         race.setAdmin(admin);
+		//race.setAdmin(admin);
+//		race.setImageFilePath(request.getParameter("image"));
+		
         raceService.createRaceEvent(race);
 		ModelAndView model = new ModelAndView(race, "/WEB-INF/racedetails.jsp");
 		return model;
