@@ -56,7 +56,7 @@ public class RaceEventServlet extends HttpServlet {
 			if (matcher.group(3) != null) {
 				if (matcher.group(3).equalsIgnoreCase("/running")) {
 					//modelAndView = raceGetController.updateRace(Long.parseLong(matcher.group(2)));
-					modelAndView = raceGetController.retrieveSpecificRaceEventList("running");
+					modelAndView = raceGetController.retrieveSpecificRaceEventList("Running");
 				} else if (matcher.group(3).equalsIgnoreCase("/cycling")) {
 					//modelAndView = raceGetController.deleteRace(Long.parseLong(matcher.group(2)));
 				} else if (matcher.group(3).equalsIgnoreCase("/triathlon")) {

@@ -28,10 +28,10 @@ public class RaceService {
         return resultList;
     }
     
-    public List getAllRaceEvents(String raceType) {
+    public List getAllRaceEvents(String raceTypeQuery) {
     	return em.createQuery(
     	        "Select r From RaceEvent r WHERE r.raceType LIKE :raceType")
-    	        .setParameter("raceEvent", "%"+raceType+"%")
+    	        .setParameter("raceType", "%"+raceTypeQuery+"%")
     	        .getResultList();
     }
     
