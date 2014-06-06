@@ -32,10 +32,11 @@
 						<td><a href="/race/${race.id}"> <c:out
 									value="${race.raceName}" />
 						</a></td>
-						<td><c:out value="${race.raceType}" /></td>
-						<td><c:out value="${race.raceDescription}" /></td>
-						<td><c:out value="${race.formattedCost}" /></td>
 						<td><c:out value="${race.raceDate}" /></td>
+						<td><c:out value="${race.raceType}" /></td>
+						<td><a href='/race/${race.id }/update'><button class="btn btn-default">Edit</button></a></td>
+						<td><a href='/race/${race.id }/delete'><button class="btn btn-default">Delete</button></a></td>
+						<td><a href='/race/${race.id }'><button class="btn btn-default">Details</button></a></td>
 						<td><c:out value="${race.raceTime}" /></td>
 					</tr>
 				</c:forEach>
