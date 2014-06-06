@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,9 +28,11 @@
 				<h3>Cost</h3>
 					<h5>${model.formattedCost}</h5>
 				<span class="pull-right">
-					${model.raceTwitterPage}
+					<c:url var ="facebook" value="${model.raceFaceBookPage}"></c:url>
+					<c:url var ="twitter" value="${model.raceTwitterPage}"></c:url>
+					<a href="${facebook }"><img alt="Facebook" src="/resources/images/fb_logo.png"></a>
 					&nbsp;&nbsp;
-					${model.raceFaceBookPage}
+					<a href="${twitter }"><img alt="Twitter" src="/resources/images/twitter_logo.png"></a>
 				</span>
 			</div>
 		</div>
