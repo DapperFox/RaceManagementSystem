@@ -58,15 +58,15 @@
 				</div>
 				<div class="col-md-3 raceType">
 					<img alt="Cycling" src="../resources/images/cycling.jpg" class="image-responsive raceTypeImage">	
-					<a class="btn btn-large" href="#">Cycling</a>
+					<a class="btn btn-large" href="/race/events/cycling">Cycling</a>
 				</div>
 				<div class="col-md-3 raceType">
 					<img alt="Triathlon" src="../resources/images/triathlon.jpg" class="image-responsive raceTypeImage">	
-					<a class="btn btn-large" href="#">Triathlon</a>
+					<a class="btn btn-large" href="/race/events/triathlon">Triathlon</a>
 				</div>
 				<div class="col-md-3 raceType">
 					<img alt="Special" src="../resources/images/special.jpg" class="image-responsive raceTypeImage">	
-					<a class="btn btn-large" href="#">Special</a>
+					<a class="btn btn-large" href="/race/events/special">Special</a>
 				</div>
 			</div>
 			

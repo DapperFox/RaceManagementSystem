@@ -55,14 +55,13 @@ public class RaceEventServlet extends HttpServlet {
 		if (matcher.matches()) {
 			if (matcher.group(3) != null) {
 				if (matcher.group(3).equalsIgnoreCase("/running")) {
-					//modelAndView = raceGetController.updateRace(Long.parseLong(matcher.group(2)));
 					modelAndView = raceGetController.retrieveSpecificRaceEventList("Running");
 				} else if (matcher.group(3).equalsIgnoreCase("/cycling")) {
-					//modelAndView = raceGetController.deleteRace(Long.parseLong(matcher.group(2)));
+					modelAndView = raceGetController.retrieveSpecificRaceEventList("Cycling");
 				} else if (matcher.group(3).equalsIgnoreCase("/triathlon")) {
-					//modelAndView = raceGetController.getResultsList(Long.parseLong(matcher.group(2)));
+					modelAndView = raceGetController.retrieveSpecificRaceEventList("Triathlon");
 				} else if (matcher.group(3).equalsIgnoreCase("/special")) {
-					//modelAndView = raceGetController.getResultsList(Long.parseLong(matcher.group(2)));
+					modelAndView = raceGetController.retrieveSpecificRaceEventList("Special");
 				}
 			}
 		}
