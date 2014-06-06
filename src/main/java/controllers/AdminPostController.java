@@ -3,6 +3,7 @@ package controllers;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import models.Account;
 import models.Address;
@@ -37,9 +38,25 @@ public class AdminPostController {
 		raceService.createAccount(account);
 		//Don't pass in the the admin
 		//...use the admin to get all their races and pass in that list
-				
+		HttpSession session = request.getInstance().getSession();
+		session.setAttribute("accountID", account.getId());
 		ModelAndView modelAndView = new ModelAndView(admin, "/WEB-INF/admindashboard.jsp");
 
         return modelAndView;
     }
+
+	public ModelAndView adminLogin() {
+		//get account id and authenticate it
+		HttpSession session = request.getInstance().getSession();
+		String id = (String) session.getAttribute("accountID");
+		Admin admin = new Admin();
+		/*Account acount = 
+		if(id == id){
+			
+		}*/
+		
+		ModelAndView modelAndView = new ModelAndView(admin, "/WEB-INF/admindashboard.jsp");
+
+        return modelAndView;
+	}
 }

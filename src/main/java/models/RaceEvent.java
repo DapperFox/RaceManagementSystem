@@ -69,7 +69,6 @@ public class RaceEvent {
 	@JoinColumn(name="admin_id")
 	private Admin admin;
 	
-
     @ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
     @JoinTable(name="raceEvent_racer",
             joinColumns=@JoinColumn(name="raceEvent_id"),
@@ -81,6 +80,14 @@ public class RaceEvent {
 
 	public RaceEvent(){
 
+	}
+	
+	public Admin getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Admin admin) {
+		this.admin = admin;
 	}
 	
 	public void addRacerToRaceEvent(Racer racer){

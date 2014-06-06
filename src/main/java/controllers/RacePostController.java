@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Account;
 import models.ModelAndView;
 import models.RaceEvent;
 import models.RaceService;
@@ -9,6 +10,8 @@ import models.RequestInjectingServletRequestListener;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -24,7 +27,9 @@ public class RacePostController {
 
 	public ModelAndView createNewRaceEvent(){
 		RaceEvent race = new RaceEvent();
-		
+		HttpSession session = request.getInstance().getSession();
+		Long id = (Long)session.getAttribute("accountID");
+		Account account = raceService.getAccount(id);
 		String dateAsString = request.getInstance().getParameter("date");
 		Date date = formatDate(dateAsString);
 		
@@ -37,6 +42,7 @@ public class RacePostController {
 		race.setRaceDescription(request.getInstance().getParameter("description"));
 		race.setRaceTwitterPage(request.getInstance().getParameter("twitterPage"));
 		race.setRaceFaceBookPage(request.getInstance().getParameter("facebookPage"));
+		//race.setAdmin()
 //		race.setImageFilePath(request.getParameter("image"));
 		
 		//We need to add the race creator to the race event

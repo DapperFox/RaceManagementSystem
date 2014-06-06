@@ -18,5 +18,12 @@ public class AdminGetController {
         ModelAndView modelAndView = new ModelAndView(admin, "/WEB-INF/adminregister.jsp");
 
         return modelAndView;
-    } 
+    }
+
+	public ModelAndView adminLogin() {
+		Admin admin = null;
+        ModelAndView modelAndView = new ModelAndView(admin, "/WEB-INF/adminlogin.jsp");
+
+        return modelAndView;
+	} 
 }

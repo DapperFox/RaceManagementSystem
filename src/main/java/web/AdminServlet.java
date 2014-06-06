@@ -39,6 +39,13 @@ public class AdminServlet extends HttpServlet {
         if(matcher.matches()){
             modelAndView = adminGetController.createNewAdmin();        
         }
+        
+        pattern = Pattern.compile(regexLogin);
+        matcher = pattern.matcher(uriString);
+        if(matcher.matches()){
+        	modelAndView = adminGetController.adminLogin();
+        }
+        
         request.setAttribute("model", modelAndView.getModel());
         RequestDispatcher view = request.getRequestDispatcher(modelAndView.getViewName());
         view.forward(request, response);
@@ -54,6 +61,12 @@ public class AdminServlet extends HttpServlet {
         if(matcher.matches()){
             modelAndView = adminPostController.createNewAdmin();
             
+        }
+        
+        pattern = Pattern.compile(regexLogin);
+        matcher = pattern.matcher(uriString);
+        if(matcher.matches()){
+        	modelAndView = adminPostController.adminLogin();
         }
         
         request.setAttribute("model", modelAndView.getModel());
