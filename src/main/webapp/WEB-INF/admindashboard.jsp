@@ -37,7 +37,6 @@
 						<td><a href='/race/${race.id }/update'><button class="btn btn-default">Edit</button></a></td>
 						<td><a href='/race/${race.id }/delete'><button class="btn btn-default">Delete</button></a></td>
 						<td><a href='/race/${race.id }'><button class="btn btn-default">Details</button></a></td>
-						<td><c:out value="${race.raceTime}" /></td>
 					</tr>
 				</c:forEach>
 				</c:if>
