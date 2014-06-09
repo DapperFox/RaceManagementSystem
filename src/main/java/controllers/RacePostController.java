@@ -15,8 +15,10 @@ import javax.servlet.http.HttpSession;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 
 @Stateless
@@ -90,10 +92,12 @@ public class RacePostController {
 	public ModelAndView registerForRace(Long raceId, Long racerId){
 		RaceEvent race = raceService.getRaceEvent(raceId);
 		Racer racer = raceService.getRacer(racerId);
-		//Add racer to race
 		race.addRacerToRaceEvent(racer);
-        //todo make a view to show where races are registered
-		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/racedetails.jsp");
+		
+		List<RaceEvent> raceList = new ArrayList<RaceEvent>();
+		raceList.addAll(racer.getRacerEvents());
+		
+		ModelAndView modelAndView = new ModelAndView(raceList, "/WEB-INF/races.jsp");
 		return modelAndView;
 	}
 
