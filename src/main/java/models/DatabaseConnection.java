@@ -20,18 +20,6 @@ public class DatabaseConnection extends BasicDataSource {
         initConnection();
     }
     public void initConnection() {
-        //todo fix this so that it isn't dumb
-//        URI dbUri = null;
-//        try {
-//            dbUri = new URI(System.getenv("DATABASE_URL"));
-//        } catch (URISyntaxException e) {
-//            e.printStackTrace();
-//        }
-//
-//        super.setUsername(dbUri.getUserInfo().split(":")[0]);
-//        super.setPassword(this.password = dbUri.getUserInfo().split(":")[1]);
-//        super.setUrl("jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath());
-//        super.setDriverClassName("org.postgresql.Driver");
         super.setUsername(username);
         super.setPassword(password);
         super.setUrl(url);

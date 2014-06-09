@@ -4,28 +4,29 @@
     <error-code>404</error-code>
     <location>/404.jsp</location>
   </error-page>
-  <!-- <security-role>  Define the role
-    <role-name>ADMIN</role-name>
-  </security-role>
- 
-  
-  <security-constraint> Define the protected resources and for which roles they are authorized
-    <web-resource-collection>
-      <web-resource-name>Race Event Crud Operations</web-resource-name>
-      <url-pattern>/race/create</url-pattern>
-      <http-method>POST</http-method>
-    </web-resource-collection>
-    <auth-constraint>
-      <role-name>ADMIN</role-name>
-    </auth-constraint>
-  </security-constraint>
-  
-  <login-config>  Define how authentication creds will be accepted
-    <auth-method>FORM</auth-method>  Use an HTML form (also supported are BASIC and DIGEST)
-    <realm-name>university</realm-name>  This field doesn't tie to anything in the application
-    <form-login-config>
-      <form-login-page>/logon.jsp</form-login-page>
-      <form-error-page>/logonError.jsp</form-error-page>
-    </form-login-config>
-  </login-config> -->
+
+  <!--<security-role>  Define the role-->
+    <!--<role-name>ADMIN</role-name>-->
+  <!--</security-role>-->
+
+
+  <!--<security-constraint> Define the protected resources and for which roles they are authorized-->
+    <!--<web-resource-collection>-->
+      <!--<web-resource-name>Race Event Crud Operations</web-resource-name>-->
+      <!--<url-pattern>/race/create</url-pattern>-->
+      <!--<http-method>POST</http-method>-->
+    <!--</web-resource-collection>-->
+    <!--<auth-constraint>-->
+      <!--<role-name>ADMIN</role-name>-->
+    <!--</auth-constraint>-->
+  <!--</security-constraint>-->
+
+  <!--<login-config>  Define how authentication creds will be accepted-->
+    <!--<auth-method>FORM</auth-method>  Use an HTML form (also supported are BASIC and DIGEST)-->
+    <!--<realm-name>university</realm-name>  This field doesn't tie to anything in the application-->
+    <!--<form-login-config>-->
+      <!--<form-login-page>/WEB-INF/adminlogin.jsp</form-login-page>-->
+      <!--<form-error-page>/WEB-INF/adminlogin.jsp</form-error-page>-->
+    <!--</form-login-config>-->
+  <!--</login-config>-->
 </web-app>

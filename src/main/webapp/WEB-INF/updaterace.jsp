@@ -36,7 +36,7 @@
 		      </div>
 			  <div class="form-group">
 		        <label class="control-label">Date</label>
-				<input type="date" class="form-control" name="date" value="${model.getFormattedRaceDate() }">
+				<input type="date" class="form-control" name="date" value="${model.formattedRaceDate }">
 		      </div>
 		      <div class="form-group">
 		        <label class="control-label">Time</label>
