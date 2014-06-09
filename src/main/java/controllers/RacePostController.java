@@ -92,6 +92,7 @@ public class RacePostController {
 		Racer racer = raceService.getRacer(racerId);
 		//Add racer to race
 		race.addRacerToRaceEvent(racer);
+        //todo make a view to show where races are registered
 		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/racedetails.jsp");
 		return modelAndView;
 	}
