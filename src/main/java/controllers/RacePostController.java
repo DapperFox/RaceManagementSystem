@@ -98,6 +98,7 @@ public class RacePostController {
 		raceList.addAll(racer.getRacerEvents());
 		
 		ModelAndView modelAndView = new ModelAndView(raceList, "/WEB-INF/races.jsp");
+
 		return modelAndView;
 	}
 

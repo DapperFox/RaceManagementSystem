@@ -36,15 +36,13 @@
 						<td><c:out value="${race.raceType}" /></td>
 						<td><a href='/race/${race.id }/update'><button class="btn btn-default">Edit</button></a></td>
 						<td><a href='/race/${race.id }/delete'><button class="btn btn-default">Delete</button></a></td>
-						<td><a href='/race/${race.id }'><button class="btn btn-default">Details</button></a></td>
+						<td><a href='/admin/${race.id }/results'><button class="btn btn-default">Results</button></a></td>
 					</tr>
 				</c:forEach>
 				</c:if>
-
 			</table>
 		</div>
 	</div>
-
 	<%@ include file="../WEB-INF/partials/footer.jsp"%>
 </body>
 </html>

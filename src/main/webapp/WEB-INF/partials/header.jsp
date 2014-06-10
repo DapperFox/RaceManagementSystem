@@ -26,7 +26,7 @@
 		            	<li><a href="/logout">Logout</a></li>
 		            </c:when>
 		            <c:otherwise>
-		            	<li><a href="#">Login</a></li>
+		            	<li><a href="/racer/login">Login</a></li>
 		              	<li><a href="/racer/register">Register</a></li>
 		           </c:otherwise>
 	            </c:choose>
