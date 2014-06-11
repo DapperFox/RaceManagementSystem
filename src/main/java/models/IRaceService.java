@@ -29,4 +29,6 @@ public interface IRaceService {
     List getRaceResultsList(Long id);
 
     Account getAccountByEmail(String email);
+
+    RaceEvent getAllRacersFromRace(Long id);
 }
