@@ -1,5 +1,6 @@
 package models;
 
+import javax.ejb.Local;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -15,20 +16,24 @@ import java.util.Set;
  */
 @Stateless
 @LocalBean
-public class RaceService {
+@Local(IRaceService.class)
+public class RaceService implements IRaceService {
     @PersistenceContext(name="RaceManagement")
     private EntityManager em;
 
+    @Override
     public RaceEvent getRaceEvent(Long id) {
         return em.find(RaceEvent.class, id);
     }
     
+    @Override
     public List getAllRaceEvents() {
         Query query = em.createQuery("SELECT r FROM RaceEvent r");
         List resultList = query.getResultList();
         return resultList;
     }
     
+    @Override
     public List getAllRaceEvents(String raceTypeQuery) {
     	return em.createQuery(
     	        "Select r From RaceEvent r WHERE r.raceType LIKE :raceType")
@@ -36,6 +41,7 @@ public class RaceService {
     	        .getResultList();
     }
     
+    @Override
     public List getRaceSearchResults(String queryString){
     	String query = queryString.toLowerCase();
     	//return em.createNamedQuery("searchQuery").setParameter("raceEvent", queryString).getResultList();
@@ -46,14 +52,17 @@ public class RaceService {
     	 
     }
     
+    @Override
     public Racer getRacer(Long id){
     	return em.find(Racer.class, id);
     }
     
+    @Override
     public void createRaceEvent(RaceEvent raceEvent) {
         em.persist(raceEvent);
     }
 
+    @Override
     public void deleteRaceEvent(Long id) {
         RaceEvent raceEvent = em.find(RaceEvent.class, id);
         if(raceEvent != null) {
@@ -61,18 +70,22 @@ public class RaceService {
         }
     }
     
+    @Override
     public void createRacer(Racer racer){
     	em.persist(racer);
     }
     
+    @Override
     public void createAccount(Account account){
     	em.persist(account);
     }
 
-    public Admin getAdmin(Long id) { 
+    @Override
+    public Admin getAdmin(Long id) {
     	return em.find(Admin.class, id); 
     	}
-	public List getRaceResultsList(Long id) {
+	@Override
+    public List getRaceResultsList(Long id) {
 		em.find(RaceEvent.class, id);
 		Query query = em.createQuery("SELECT r FROM RaceResult r");
         List resultList = query.getResultList();
@@ -83,4 +96,10 @@ public class RaceService {
 		RaceEvent raceEvent = em.find(RaceEvent.class, id);
         return raceEvent;
 	}
+
+    @Override
+    public Account getAccountByEmail(String email) {
+        return (Account)em.createNamedQuery("byUsername")
+                .setParameter("email", email).getSingleResult();
+    }
 }

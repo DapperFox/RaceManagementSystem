@@ -10,7 +10,9 @@ import java.util.Set;
  */
 @Entity
 @Table(name="account")
-
+@NamedQueries({
+        @NamedQuery(name="byUsername", query="SELECT a FROM Account a WHERE a.email = :email")
+})
 public class Account {
 
     @Id
