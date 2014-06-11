@@ -1,6 +1,5 @@
 package controllers;
 
-import java.util.List;
 import java.util.Set;
 
 import javax.inject.Inject;
@@ -9,13 +8,12 @@ import javax.servlet.http.HttpSession;
 import models.Admin;
 import models.ModelAndView;
 import models.RaceEvent;
-import models.RaceService;
-import models.Racer;
+import models.IRaceService;
 import models.RequestInjectingServletRequestListener;
 
 public class AdminGetController {
 
-	@Inject private RaceService raceService;
+	@Inject private IRaceService raceService;
 	@Inject private RequestInjectingServletRequestListener request;
 	
 	public ModelAndView createNewAdmin() {

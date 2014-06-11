@@ -17,6 +17,6 @@ public class RacerGetController {
     }
 
     public ModelAndView loginRacer() {
-        return new ModelAndView(null, "/WEB-INF/racerlogin.jsp");
+        return new ModelAndView(null, "/WEB-INF/login.jsp");
     }
 }

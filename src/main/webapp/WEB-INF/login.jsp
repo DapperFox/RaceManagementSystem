@@ -17,18 +17,18 @@
         <hr />
     </div>
     <div class="row">
-        <form role="form" method="POST" action="/racer/login">
+        <form role="form" method="POST" action="j_security_check">
             <div class="form-group">
                 <label class="control-label">Email</label>
-                <input type="text" class="form-control" name="email">
+                <input type="text" class="form-control" name="j_username">
             </div>
             <div class="form-group">
                 <label class="control-label">Password</label>
-                <input type="password" class="form-control" name="password">
+                <input type="password" class="form-control" name="j_password">
             </div>
 
 
-            <button type="submit" class="btn btn-default pull-right">Login</button>
+            <input type="submit" class="btn btn-default pull-right">
         </form>
     </div>
 </div>

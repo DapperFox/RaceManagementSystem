@@ -6,11 +6,9 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import models.Account;
-import models.Address;
 import models.Admin;
 import models.ModelAndView;
-import models.RaceService;
-import models.Racer;
+import models.IRaceService;
 import models.RequestInjectingServletRequestListener;
 import models.Role;
 import security.*;
@@ -19,7 +17,7 @@ import security.*;
 @LocalBean
 public class AdminPostController {
 	@Inject
-    private RaceService raceService;
+    private IRaceService raceService;
     @Inject private RequestInjectingServletRequestListener request;
     @Inject PasswordEncoder passwordEncoder;
 

@@ -1,10 +1,9 @@
 package controllers;
 
-import models.Account;
 import models.Admin;
 import models.ModelAndView;
 import models.RaceEvent;
-import models.RaceService;
+import models.IRaceService;
 import models.Racer;
 import models.RequestInjectingServletRequestListener;
 
@@ -18,14 +17,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 
 @Stateless
 @LocalBean
 public class RacePostController {
 
-    @Inject private RaceService raceService;
+    @Inject private IRaceService raceService;
     @Inject private RequestInjectingServletRequestListener request;
 
 	public ModelAndView createNewRaceEvent(){

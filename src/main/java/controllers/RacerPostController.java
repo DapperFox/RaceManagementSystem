@@ -6,7 +6,6 @@ import models.*;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.servlet.http.HttpSession;
 
 import security.PasswordEncoder;
 
@@ -17,7 +16,7 @@ import security.PasswordEncoder;
 @LocalBean
 public class RacerPostController {
     @Inject
-    private RaceService raceService;
+    private IRaceService raceService;
     @Inject private RequestInjectingServletRequestListener request;
     @Inject PasswordEncoder passwordEncoder;
     

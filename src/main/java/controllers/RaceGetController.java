@@ -3,7 +3,7 @@ package controllers;
 import models.ModelAndView;
 import models.RaceEvent;
 import models.RaceResult;
-import models.RaceService;
+import models.IRaceService;
 import models.RequestInjectingServletRequestListener;
 
 import javax.inject.Inject;
@@ -12,7 +12,7 @@ import java.util.Set;
 
 public class RaceGetController {
 	
-	@Inject private RaceService raceService;
+	@Inject private IRaceService raceService;
 	@Inject private RequestInjectingServletRequestListener request;
 	
 	public ModelAndView createNewRaceEvent(){
