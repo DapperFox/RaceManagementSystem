@@ -1,6 +1,8 @@
 package models;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -117,7 +119,16 @@ public class Racer {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-    //racers is contained in RaceEvent
+	
+    public Set<RaceEvent> getRacerEvents() {
+		return racerEvents;
+	}
+
+	public void setRacerEvents(Set<RaceEvent> racerEvents) {
+		this.racerEvents = racerEvents;
+	}
+
+	//racers is contained in RaceEvent
     @ManyToMany(mappedBy="racers")
     private Set<RaceEvent> racerEvents = new HashSet<RaceEvent>();
 

@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/resources/style/main.css"/>
-    <title>Admin Login</title>
+    <title>Racer Login</title>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/header.jsp"></jsp:include>
