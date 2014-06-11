@@ -75,7 +75,15 @@ public class RaceEvent {
             inverseJoinColumns=@JoinColumn(name="racer_id"))
     private Set<Racer> racers = new HashSet<Racer>();
 
-    @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST, mappedBy="racerEvent")
+    public Set<Racer> getRacers() {
+		return racers;
+	}
+
+	public void setRacers(Set<Racer> racers) {
+		this.racers = racers;
+	}
+
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST, mappedBy="racerEvent")
     private Set<RaceResult> results = new HashSet<RaceResult>();
 
 	public RaceEvent(){

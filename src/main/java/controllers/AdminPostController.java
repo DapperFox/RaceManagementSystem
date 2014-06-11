@@ -60,4 +60,11 @@ public class AdminPostController {
 
         return modelAndView;
 	}
+
+	public ModelAndView submitResults(Long id) {
+		//Insert a row into race result that has the racer id, race id, raceTime, racePosition
+		
+		
+		return null;
+	}
 }

@@ -28,7 +28,7 @@
 						<th>Event Type</th>
 						<th>Edit</th>
 						<th>Delete</th>
-						<th>Event Details</th>
+						<th>Race Results</th>
 					</tr>
 				</thead>
 				

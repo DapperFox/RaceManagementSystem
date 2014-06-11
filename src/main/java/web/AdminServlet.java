@@ -28,6 +28,9 @@ public class AdminServlet extends HttpServlet {
     String regexRegister = "/admin/register";
     String regexLogin = "/admin/login";
     String regextAdminDashboard = "/admin";
+    String regextRacerResults = "/admin/([0-9]+)/results";
+    String regextSubmitResults = "/admin/([0-9]+)/submitRaceResults";
+    
     
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -53,6 +56,13 @@ public class AdminServlet extends HttpServlet {
         	modelAndView = adminGetController.adminDashboard();
         }
         
+        pattern = Pattern.compile(regextRacerResults);
+        matcher = pattern.matcher(uriString);
+        if(matcher.matches()){
+        	Long id = Long.parseLong(matcher.group(1));
+        	modelAndView = adminGetController.inputResultsPage(id);
+        }
+        
         request.setAttribute("model", modelAndView.getModel());
         RequestDispatcher view = request.getRequestDispatcher(modelAndView.getViewName());
         view.forward(request, response);
@@ -74,6 +84,13 @@ public class AdminServlet extends HttpServlet {
         matcher = pattern.matcher(uriString);
         if(matcher.matches()){
         	modelAndView = adminPostController.adminLogin();
+        }
+        
+        pattern = Pattern.compile(regextSubmitResults);
+        matcher = pattern.matcher(uriString);
+        if(matcher.matches()){
+        	Long id = Long.parseLong(matcher.group(1));
+        	modelAndView = adminPostController.submitResults(id);
         }
         
         request.setAttribute("model", modelAndView.getModel());

@@ -43,5 +43,11 @@ public class AdminGetController {
 		ModelAndView modelAndView = new ModelAndView(list, "/WEB-INF/admindashboard.jsp");
 		
 		return modelAndView;
+	}
+
+	public ModelAndView inputResultsPage(Long id) {
+		RaceEvent race = raceService.getAllRacersFromRace(id);
+		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/inputraceresults.jsp");
+		return modelAndView;
 	} 
 }

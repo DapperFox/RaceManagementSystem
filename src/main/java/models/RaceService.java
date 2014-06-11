@@ -8,6 +8,7 @@ import javax.persistence.Query;
 
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by blakebishop on 5/22/14.
@@ -76,5 +77,10 @@ public class RaceService {
 		Query query = em.createQuery("SELECT r FROM RaceResult r");
         List resultList = query.getResultList();
         return resultList;
+	}
+
+	public RaceEvent getAllRacersFromRace(Long id) {
+		RaceEvent raceEvent = em.find(RaceEvent.class, id);
+        return raceEvent;
 	}
 }
