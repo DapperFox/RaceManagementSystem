@@ -13,7 +13,13 @@
 <body>
 <%@ include file="../WEB-INF/partials/header.jsp"%>
 	<div class="container">
+		
 		<div class="row">
+		
+			<div class="pull-right">
+				<a href='/race/create'><button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>&nbsp;Create Event</button></a>
+			</div>
+		
 			<table class="table table-hover">
 				<thead>
 					<tr>
