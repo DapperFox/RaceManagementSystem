@@ -30,7 +30,6 @@
 				<c:forEach var="racer" items="${model.racers}">
 					<tr>
 						
-						<td><c:out value="${racer.id}" /></td>
 						<td><p name="racerId"> ${racer.id}</td>
 						<td><c:out value="${racer.firstName} ${racer.lastName }" /></td>
 						<td><input type="Text" class="form-control" name="rank"></td>
