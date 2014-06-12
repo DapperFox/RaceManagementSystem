@@ -17,7 +17,7 @@
 	<div class="container">
 	
 		<div class="row">
-			<h1>${user}'s Upcoming Events</h1>
+			<h1>${user.firstName}'s Upcoming Events</h1>
 			<hr />
 		</div>
 	
