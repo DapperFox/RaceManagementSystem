@@ -28,6 +28,7 @@ public class AdminServlet extends HttpServlet {
     String regexRegister = "/admin/register";
     String regexLogin = "/admin/login";
     String regextAdminDashboard = "/admin";
+    String regexAdminUDPattern = "(/admin/)([0-9]+)(/[A-Za-z]*)";
     String regextRacerResults = "/admin/([0-9]+)/results";
     String regextSubmitResults = "/admin/([0-9]+)/submitRaceResults";
     
@@ -63,6 +64,21 @@ public class AdminServlet extends HttpServlet {
         	modelAndView = adminGetController.inputResultsPage(id);
         }
         
+        pattern = Pattern.compile(regexAdminUDPattern);
+		matcher = pattern.matcher(uriString);
+
+		if (matcher.matches()) {
+			if (matcher.group(3) != null) {
+				if (matcher.group(3).equalsIgnoreCase("/update")) {
+					modelAndView = adminGetController.updateRace(Long
+							.parseLong(matcher.group(2)));
+				} else if (matcher.group(3).equalsIgnoreCase("/delete")) {
+					modelAndView = adminGetController.deleteRace(Long
+							.parseLong(matcher.group(2)));
+				} 
+			}
+		}
+        
         request.setAttribute("model", modelAndView.getModel());
         RequestDispatcher view = request.getRequestDispatcher(modelAndView.getViewName());
         view.forward(request, response);
@@ -74,7 +90,6 @@ public class AdminServlet extends HttpServlet {
         
         Pattern pattern = Pattern.compile(regexRegister);
         Matcher matcher = pattern.matcher(uriString);
-
         if(matcher.matches()){
             modelAndView = adminPostController.createNewAdmin();
             
@@ -92,6 +107,16 @@ public class AdminServlet extends HttpServlet {
         	Long id = Long.parseLong(matcher.group(1));
         	modelAndView = adminPostController.submitResults(id);
         }
+        
+        pattern = Pattern.compile(regexAdminUDPattern);
+		matcher = pattern.matcher(uriString);
+
+		if (matcher.matches()) {
+			if (matcher.group(3).equalsIgnoreCase("/update")) {
+				modelAndView = adminPostController.updateRace(Long
+						.parseLong(matcher.group(2)));
+			}
+		}
         
         request.setAttribute("model", modelAndView.getModel());
         RequestDispatcher view = request.getRequestDispatcher(modelAndView.getViewName());

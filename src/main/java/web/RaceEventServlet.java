@@ -74,13 +74,7 @@ public class RaceEventServlet extends HttpServlet {
 
 		if (matcher.matches()) {
 			if (matcher.group(3) != null) {
-				if (matcher.group(3).equalsIgnoreCase("/update")) {
-					modelAndView = raceGetController.updateRace(Long
-							.parseLong(matcher.group(2)));
-				} else if (matcher.group(3).equalsIgnoreCase("/delete")) {
-					modelAndView = raceGetController.deleteRace(Long
-							.parseLong(matcher.group(2)));
-				} else if (matcher.group(3).equalsIgnoreCase("/results")) {
+				if (matcher.group(3).equalsIgnoreCase("/results")) {
 					modelAndView = raceGetController.getResultsList(Long
 							.parseLong(matcher.group(2)));
 				}
@@ -128,11 +122,7 @@ public class RaceEventServlet extends HttpServlet {
 		matcher = pattern.matcher(uriString);
 
 		if (matcher.matches()) {
-			if (matcher.group(3).equalsIgnoreCase("/update")) {
-				modelAndView = racePostController.updateRace(Long
-						.parseLong(matcher.group(2)));
-			}
-			else if(matcher.group(3).equalsIgnoreCase("/register")){
+			if(matcher.group(3).equalsIgnoreCase("/register")){
                 Account user = CurrentUser.getUser();
                 modelAndView = racePostController.registerForRace(Long
 				.parseLong(matcher.group(2)), user.getRacer().getId());

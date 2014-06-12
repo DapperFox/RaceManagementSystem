@@ -48,4 +48,18 @@ public class AdminGetController {
 		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/inputraceresults.jsp");
 		return modelAndView;
 	} 
+	
+	public ModelAndView updateRace(Long id){
+		RaceEvent race = raceService.getRaceEvent(id);
+		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/updaterace.jsp");
+		return modelAndView;
+	}
+	
+	public ModelAndView deleteRace(Long id){
+		raceService.deleteRaceEvent(id);
+		RaceEvent race = null;
+		//What jsp do we want this to forward to?
+		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/racelist.jsp");
+		return modelAndView;
+	}
 }
