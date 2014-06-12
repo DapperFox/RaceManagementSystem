@@ -41,15 +41,11 @@
 		            <div class="carousel-caption">
 		              <h1>SLCycle</h1>
 		              <p class="lead">Cruise around Salt Lake City in a 50 miler.</p>
-		              <a class="btn btn-large" href="/race/1801">Check it out!</a>
+		              <a class="btn btn-large" href="/race/2301">Check it out!</a>
 		            </div>
 		          </div>
 		        </div>
 		      </div>
-		      <!-- 
-		      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&#60;</a>
-		      <a class="right carousel-control" href="#myCarousel" data-slide="next">&#62;</a>
-		      -->
 		    </div>
 		
 			<div class="row">

@@ -55,15 +55,10 @@ public class AdminGetController {
 	}
 	
 	public ModelAndView deleteRace(Long id){
-		
-		//Set<RaceEvent> list = null;
         Admin adminCurrent = CurrentUser.getUser().getAdmin();
         adminCurrent.removeRace(id);
-//        if(adminCurrent != null) {
-//            list = adminCurrent.getRaceList();
-//        }
-        
         raceService.deleteRaceEvent(id);
+        
         Set<RaceEvent> list = adminCurrent.getRaceList();
           
 		ModelAndView modelAndView = new ModelAndView(list, "/WEB-INF/admindashboard.jsp");

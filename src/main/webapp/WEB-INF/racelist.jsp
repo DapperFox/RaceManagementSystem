@@ -41,22 +41,32 @@
 						<th>Time</th>
 					</tr>
 				</thead>
-
-				<c:forEach var="race" items="${model}">
+			
+				<c:choose>
+					<c:when test="${not empty model }">
+						<c:forEach var="race" items="${model}">
+							<tr>
+								<td>
+		                            <a href="/race/${race.id}">
+		                                <c:out value="${race.raceName}" />
+		                            </a>
+		                        </td>
+								<td><c:out value="${race.raceType}" /></td>
+								<td><c:out value="${race.raceDescription}" /></td>
+								<td><c:out value="${race.formattedCost}" /></td>
+								<td><c:out value="${race.raceDate}" /></td>
+								<td><c:out value="${race.raceTime}" /></td>
+							</tr>
+						</c:forEach>
+					</c:when>
+					<c:otherwise>
 					<tr>
 						<td>
-                            <a href="/race/${race.id}">
-                                <c:out value="${race.raceName}" />
-                            </a>
-                        </td>
-						<td><c:out value="${race.raceType}" /></td>
-						<td><c:out value="${race.raceDescription}" /></td>
-						<td><c:out value="${race.formattedCost}" /></td>
-						<td><c:out value="${race.raceDate}" /></td>
-						<td><c:out value="${race.raceTime}" /></td>
+							<p class="text-warning h4">Your search did not match any results</p>
+						</td>
 					</tr>
-				</c:forEach>
-
+					</c:otherwise>
+				</c:choose>
 			</table>
 		</div>
 	</div>

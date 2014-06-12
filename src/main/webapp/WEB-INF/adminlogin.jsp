@@ -16,20 +16,21 @@
 			<h1>Login</h1>
 			<hr />
 		</div>
-		<div class="row">	
-			<form role="form" method="POST" action="/admin/login">
-		      <div class="form-group">
-		        <label class="control-label">Email</label>
-				<input type="text" class="form-control" name="email">
-		      </div>
-		      <div class="form-group">
-		        <label class="control-label">Password</label>
-				<input type="password" class="form-control" name="password">
-		      </div>
-		      
-  
-		      <button type="submit" class="btn btn-default pull-right">Login</button>
-		    </form>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<form role="form" method="POST" action="/admin/login">
+			      <div class="form-group">
+			        <label class="control-label">Email</label>
+					<input type="text" class="form-control" name="email">
+			      </div>
+			      <div class="form-group">
+			        <label class="control-label">Password</label>
+					<input type="password" class="form-control" name="password">
+			      </div>
+	  			  <br />
+	  			  <input type="submit" class="btn btn-default pull-right" value="Login">
+			    </form>
+			</div>	
 		</div>
 	</div>
 	
