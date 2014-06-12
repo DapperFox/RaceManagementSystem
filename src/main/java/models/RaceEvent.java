@@ -69,7 +69,7 @@ public class RaceEvent {
 	@JoinColumn(name="admin_id")
 	private Admin admin;
 
-    @ManyToMany(mappedBy="racerEvents")
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy="racerEvents")
     private Set<Racer> racers = new HashSet<Racer>();
 
     public Set<Racer> getRacers() {
