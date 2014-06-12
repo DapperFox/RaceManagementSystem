@@ -2,6 +2,8 @@ package web;
 
 import controllers.RaceGetController;
 import controllers.RacePostController;
+import filter.CurrentUser;
+import models.Account;
 import models.ModelAndView;
 
 import javax.inject.Inject;
@@ -131,9 +133,9 @@ public class RaceEventServlet extends HttpServlet {
 						.parseLong(matcher.group(2)));
 			}
 			else if(matcher.group(3).equalsIgnoreCase("/register")){
-                //todo make this so it isn't hardcoded
+                Account user = CurrentUser.getUser();
                 modelAndView = racePostController.registerForRace(Long
-				.parseLong(matcher.group(2)), 51L);
+				.parseLong(matcher.group(2)), user.getRacer().getId());
 				
 			}
 		}

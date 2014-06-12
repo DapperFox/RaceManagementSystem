@@ -29,6 +29,7 @@ public class RacerServlet extends HttpServlet {
     RacerGetController racerGetController;
 
     String regexRegister = "/racer/register";
+    String regexLogin = "/racer/login";
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uriString = request.getRequestURI();
@@ -40,23 +41,24 @@ public class RacerServlet extends HttpServlet {
         if(matcher.matches()){
             modelAndView = racerGetController.createNewRacer();
         }
-
+        pattern = Pattern.compile(regexLogin);
+        matcher = pattern.matcher(uriString);
+        if(matcher.matches()){
+            modelAndView = racerGetController.loginRacer();
+        }
         request.setAttribute("model", modelAndView.getModel());
         RequestDispatcher view = request.getRequestDispatcher(modelAndView.getViewName());
         view.forward(request, response);
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uriString = request.getRequestURI();
-        ModelAndView modelAndView = null;
+        ModelAndView modelAndView;
 
         Pattern pattern = Pattern.compile(regexRegister);
         Matcher matcher = pattern.matcher(uriString);
 
         if(matcher.matches()){
             modelAndView = racerPostController.createNewRacer();
-            
-            HttpSession session = request.getSession();
-            session.setAttribute("user", modelAndView.getModel());
 
             request.setAttribute("model", modelAndView.getModel());
             RequestDispatcher view = request.getRequestDispatcher(modelAndView.getViewName());

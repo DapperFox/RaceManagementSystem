@@ -91,8 +91,8 @@ public class RacePostController {
 		RaceEvent race = raceService.getRaceEvent(raceId);
 		Racer racer = raceService.getRacer(racerId);
 		race.addRacerToRaceEvent(racer);
-		
-		List<RaceEvent> raceList = new ArrayList<RaceEvent>();
+
+		List<RaceEvent> raceList = new ArrayList<>();
 		raceList.addAll(racer.getRacerEvents());
 		
 		ModelAndView modelAndView = new ModelAndView(raceList, "/WEB-INF/races.jsp");
