@@ -4,6 +4,10 @@
     <error-code>404</error-code>
     <location>/404.jsp</location>
   </error-page>
+<error-page>
+    <error-code>403</error-code>
+    <location>/WEB-INF/adminonly.jsp</location>
+</error-page>
 
   <security-role>
     <role-name>ADMIN</role-name>
@@ -17,7 +21,6 @@
       <web-resource-name>Admin
           Operations</web-resource-name>
       <url-pattern>/race/create</url-pattern>
-      <url-pattern>/admin/</url-pattern>
       <url-pattern>/admin/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>

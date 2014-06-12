@@ -13,6 +13,7 @@
 	            <c:choose>
 	            	<c:when test="${user.loggedIn}">
 		            	<li class="loggedInUser">Welcome, ${user.firstName}!</li>
+                        <li><a href="/racer/events">My Events</a></li>
 		            	<li><a href="/logout">Logout</a></li>
 		            </c:when>
 		            <c:otherwise>

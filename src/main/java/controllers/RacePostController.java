@@ -1,5 +1,6 @@
 package controllers;
 
+import filter.CurrentUser;
 import models.Admin;
 import models.ModelAndView;
 import models.RaceEvent;
@@ -28,9 +29,9 @@ public class RacePostController {
 
 	public ModelAndView createNewRaceEvent(){
 		RaceEvent race = new RaceEvent();
-		HttpSession session = request.getInstance().getSession();
-		Long id = (Long)session.getAttribute("adminID");
-		Admin admin = raceService.getAdmin(id);
+        Admin adminCurrent = CurrentUser.getUser().getAdmin();
+
+		Admin admin = raceService.getAdmin(adminCurrent.getId());
 		String dateAsString = request.getInstance().getParameter("date");
 		Date date = formatDate(dateAsString);
 		
@@ -45,8 +46,6 @@ public class RacePostController {
 		race.setRaceFaceBookPage(request.getInstance().getParameter("facebookPage"));
 
         race.setAdmin(admin);
-		//race.setAdmin(admin);
-//		race.setImageFilePath(request.getParameter("image"));
 		
         raceService.createRaceEvent(race);
 		ModelAndView model = new ModelAndView(race, "/WEB-INF/racedetails.jsp");

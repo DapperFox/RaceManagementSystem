@@ -5,6 +5,7 @@ import java.util.Set;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import filter.CurrentUser;
 import models.Admin;
 import models.ModelAndView;
 import models.RaceEvent;
@@ -33,9 +34,8 @@ public class AdminGetController {
 	public ModelAndView adminDashboard() {
 		Set<RaceEvent> list = null;
 		if(request.getInstance().getSession().getAttribute("adminID") != null){
-		HttpSession session = request.getInstance().getSession();
-		Long id = (Long)session.getAttribute("adminID");
-		Admin admin = raceService.getAdmin(id);
+            Admin adminCurrent = CurrentUser.getUser().getAdmin();
+            Admin admin = raceService.getAdmin(adminCurrent.getId());
 		list = admin.getRaceList();
 		}
 		ModelAndView modelAndView = new ModelAndView(list, "/WEB-INF/admindashboard.jsp");

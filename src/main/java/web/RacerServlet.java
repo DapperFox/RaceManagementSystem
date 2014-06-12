@@ -33,6 +33,7 @@ public class RacerServlet extends HttpServlet {
 
     String regexRegister = "/racer/register";
     String regexLogin = "/racer/login";
+    String regexEvents = "/racer/events";
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uriString = request.getRequestURI();
@@ -53,6 +54,12 @@ public class RacerServlet extends HttpServlet {
             racer.setLoggedIn(true);
             session.setAttribute("user", racer);
             modelAndView = racerGetController.loginRacer();
+        }
+
+        pattern = Pattern.compile(regexEvents);
+        matcher = pattern.matcher(uriString);
+        if(matcher.matches()) {
+            modelAndView = racerGetController.getRaces();
         }
         request.setAttribute("model", modelAndView.getModel());
         RequestDispatcher view = request.getRequestDispatcher(modelAndView.getViewName());
