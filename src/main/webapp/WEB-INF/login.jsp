@@ -27,7 +27,6 @@
                 <input type="password" class="form-control" name="j_password">
             </div>
 
-
             <input type="submit" class="btn btn-default pull-right">
         </form>
     </div>
