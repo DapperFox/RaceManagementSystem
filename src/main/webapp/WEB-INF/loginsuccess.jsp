@@ -14,7 +14,7 @@
     <title>Login Success</title>
 </head>
 <body>
-<%--<%@ include file="/WEB-INF/partials/header.jsp"%>--%>
+<jsp:include page="/WEB-INF/partials/header.jsp"></jsp:include>
 <div class="container">
     <div class="row">
         <div class="col-md-3">
@@ -25,6 +25,6 @@
     </div>
 </div>
 
-<%--<%@ include file="/WEB-INF/partials/footer.jsp"%>--%>
+<jsp:include page="/WEB-INF/partials/footer.jsp"></jsp:include>
 </body>
 </html>

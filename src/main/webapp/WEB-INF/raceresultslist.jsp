@@ -10,6 +10,9 @@
 <title>Race Results</title>
 </head>
 <body>
+
+	<jsp:include page="/WEB-INF/partials/header.jsp"></jsp:include>
+
 	<div class="container">
 		<div class="row">
 			<table class="table table-hover">
@@ -34,5 +37,7 @@
 			</table>
 		</div>
 	</div>
+	
+	<jsp:include page="/WEB-INF/partials/footer.jsp"></jsp:include>
 </body>
 </html>

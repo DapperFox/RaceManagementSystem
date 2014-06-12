@@ -66,6 +66,6 @@
 	
 	</div>
 	
-	<%@ include file="../WEB-INF/partials/footer.jsp" %>
+	<jsp:include page="/WEB-INF/partials/footer.jsp"></jsp:include>
 </body>
 </html>
