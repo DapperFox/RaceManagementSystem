@@ -17,7 +17,7 @@ public class RaceResult {
     private Long id;
 
     @Column(name="raceTime")
-    private Timestamp raceTime;
+    private String raceTime;
 
     @Column(name="racePosition")
     private Integer racePosition;
@@ -42,12 +42,12 @@ public class RaceResult {
         this.racePosition = racePosition;
     }
 
-    public Timestamp getRaceTime() {
+    public String getRaceTime() {
         return raceTime;
     }
 
-    public void setRaceTime(long raceTime) {
-        this.raceTime = new Timestamp(raceTime);
+    public void setRaceTime(String raceTime) {
+        this.raceTime = raceTime;
     }
 
     public RaceEvent getRacerEvents() {

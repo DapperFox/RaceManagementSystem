@@ -9,6 +9,9 @@ import models.Account;
 import models.Admin;
 import models.ModelAndView;
 import models.IRaceService;
+import models.RaceEvent;
+import models.RaceResult;
+import models.Racer;
 import models.RequestInjectingServletRequestListener;
 import models.Role;
 import security.*;
@@ -59,10 +62,25 @@ public class AdminPostController {
         return modelAndView;
 	}
 
-	public ModelAndView submitResults(Long id) {
+	public ModelAndView submitResults(Long raceId) {
 		//Insert a row into race result that has the racer id, race id, raceTime, racePosition
+		RaceResult result = new RaceResult();
+		RaceEvent race = raceService.getRaceEvent(raceId);
+		Long racerId = (Long) request.getInstance().getAttribute("racerId");
 		
 		
-		return null;
+		String time = (String) request.getInstance().getAttribute("raceTime");
+		long convertedTime = Long.parseLong(time);
+		int rank = (int) request.getInstance().getAttribute("rank");
+		
+		Racer racer = raceService.getRacer(racerId);
+		
+		result.setRacePosition(rank);
+		result.setRaceTime(time);
+		result.setRacerEvents(race);
+		result.setRacer(racer);
+		ModelAndView modelAndView = new ModelAndView(result, "/WEB-INF/raceresultlist.jsp");
+		
+		return modelAndView;
 	}
 }

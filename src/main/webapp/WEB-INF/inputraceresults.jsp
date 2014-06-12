@@ -37,7 +37,7 @@
 				
 					</tr>
 				</c:forEach>
-				<button type="submit" class="btn btn-default pull-right">Submit</button>
+				<input type="submit" value="Submit" class="btn btn-default pull-right"/>
 				</form>
 				</c:if>
 			</table>
