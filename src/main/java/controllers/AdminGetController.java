@@ -55,10 +55,18 @@ public class AdminGetController {
 	}
 	
 	public ModelAndView deleteRace(Long id){
-		raceService.deleteRaceEvent(id);
-		RaceEvent race = null;
-		//What jsp do we want this to forward to?
-		ModelAndView modelAndView = new ModelAndView(race, "/WEB-INF/racelist.jsp");
+		
+		//Set<RaceEvent> list = null;
+        Admin adminCurrent = CurrentUser.getUser().getAdmin();
+        adminCurrent.removeRace(id);
+//        if(adminCurrent != null) {
+//            list = adminCurrent.getRaceList();
+//        }
+        
+        raceService.deleteRaceEvent(id);
+        Set<RaceEvent> list = adminCurrent.getRaceList();
+          
+		ModelAndView modelAndView = new ModelAndView(list, "/WEB-INF/admindashboard.jsp");
 		return modelAndView;
 	}
 }

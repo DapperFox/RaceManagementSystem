@@ -36,6 +36,10 @@ public class Admin {
 	public void addRaceToAdmin(RaceEvent race) {
 		this.raceList.add(race);
 	}
+	
+	public void removeRace(Long id){
+		this.raceList.remove(id);
+	}
 
 	public Admin(){
 		
