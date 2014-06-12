@@ -5,20 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 @Entity
 @Table(name="racer")
@@ -49,10 +36,19 @@ public class Racer {
 	
 	@Column(name="phone_number")
 	private String phoneNumber;
-	
-	@OneToMany(fetch=FetchType.EAGER, cascade={CascadeType.ALL}, mappedBy="racer")
-	private Set<RaceResult> results = new HashSet<>();
-	
+
+    //racers is contained in RaceEvent
+
+    @ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+    @JoinTable(name="raceEvent_racer",
+            joinColumns=@JoinColumn(name="racer_id"),
+            inverseJoinColumns=@JoinColumn(name="raceEvent_id"))
+    private Set<RaceEvent> racerEvents = new HashSet<RaceEvent>();
+
+    //results is contained in RaceEvent
+    @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL, mappedBy="racer")
+    private Set<RaceResult> raceResults = new HashSet<RaceResult>();
+
 	@Transient
 	private boolean isLoggedIn = false;
 
@@ -127,15 +123,4 @@ public class Racer {
 	public void setRacerEvents(Set<RaceEvent> racerEvents) {
 		this.racerEvents = racerEvents;
 	}
-
-	//racers is contained in RaceEvent
-    @ManyToMany(mappedBy="racers")
-    private Set<RaceEvent> racerEvents = new HashSet<RaceEvent>();
-
-    //results is contained in RaceEvent
-    @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST, mappedBy="racer")
-//    @JoinTable(name="racer_raceResult",
-//            joinColumns=@JoinColumn(name="racer_id"),
-//            inverseJoinColumns=@JoinColumn(name="raceResult_id"))
-    private Set<RaceResult> raceResults = new HashSet<RaceResult>();
 }

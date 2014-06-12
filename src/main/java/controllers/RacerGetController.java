@@ -30,7 +30,6 @@ public class RacerGetController {
 
     public ModelAndView getRaces() {
         Racer racer = CurrentUser.getUser().getRacer();
-        racer.getRacerEvents();
         List<RaceEvent> raceList = new ArrayList<>();
         raceList.addAll(racer.getRacerEvents());
 

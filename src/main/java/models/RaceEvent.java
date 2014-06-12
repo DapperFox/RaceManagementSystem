@@ -68,11 +68,8 @@ public class RaceEvent {
 	@ManyToOne
 	@JoinColumn(name="admin_id")
 	private Admin admin;
-	
-    @ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-    @JoinTable(name="raceEvent_racer",
-            joinColumns=@JoinColumn(name="raceEvent_id"),
-            inverseJoinColumns=@JoinColumn(name="racer_id"))
+
+    @ManyToMany(mappedBy="racerEvents")
     private Set<Racer> racers = new HashSet<Racer>();
 
     public Set<Racer> getRacers() {
