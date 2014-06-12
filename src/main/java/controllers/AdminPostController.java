@@ -2,7 +2,10 @@ package controllers;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
@@ -68,21 +71,24 @@ public class AdminPostController {
 
 	public ModelAndView submitResults(Long raceId) {
 		//Insert a row into race result that has the racer id, race id, raceTime, racePosition
-		RaceResult result = new RaceResult();
+		
+		List<RaceResult> resultsList = new ArrayList<RaceResult>();
 		RaceEvent race = raceService.getRaceEvent(raceId);
-		Long racerId = (Long) request.getInstance().getAttribute("racerId");
-				
-		String time = (String) request.getInstance().getAttribute("raceTime");
-		//long convertedTime = Long.parseLong(time);
-		int rank = (int) request.getInstance().getAttribute("rank");
-		
-		Racer racer = raceService.getRacer(racerId);
-		
-		result.setRacePosition(rank);
-		result.setRaceTime(time);
-		result.setRacerEvents(race);
-		result.setRacer(racer);
-		ModelAndView modelAndView = new ModelAndView(result, "/WEB-INF/raceresultlist.jsp");
+		Map<String, String[]> arrayData = request.getInstance().getParameterMap();
+		for(int i = 0; i < arrayData.size() - 1; i++){
+			RaceResult result = new RaceResult();
+			Long racerId = Long.parseLong(arrayData.get("racerId")[i]);//request.getInstance().getAttribute("racerId");
+			String time = arrayData.get("raceTime")[i];
+			int rank = Integer.parseInt(arrayData.get("rank")[i]);
+			
+			Racer racer = raceService.getRacer(racerId);
+			//result.setRacePosition(rank);
+			result.setRaceTime(time);
+			result.setRacerEvents(race);
+			result.setRacer(racer);
+			resultsList.add(result);
+		}
+		ModelAndView modelAndView = new ModelAndView(resultsList, "/WEB-INF/raceresultlist.jsp");
 		
 		return modelAndView;
 	}
