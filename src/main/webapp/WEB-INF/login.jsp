@@ -18,15 +18,14 @@
     </div>
     <div class="row">
         <form role="form" method="POST" action="j_security_check">
-            <div class="form-group">
+            <div class="control-group">
                 <label class="control-label">Email</label>
                 <input type="text" class="form-control" name="j_username">
             </div>
-            <div class="form-group">
+            <div class="control-group">
                 <label class="control-label">Password</label>
                 <input type="password" class="form-control" name="j_password">
             </div>
-
             <input type="submit" class="btn btn-default pull-right">
         </form>
     </div>

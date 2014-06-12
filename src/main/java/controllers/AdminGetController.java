@@ -35,7 +35,6 @@ public class AdminGetController {
 		Set<RaceEvent> list = null;
         Admin adminCurrent = CurrentUser.getUser().getAdmin();
         if(adminCurrent != null) {
-//            Admin admin = raceService.getAdmin(adminCurrent.getId());
             list = adminCurrent.getRaceList();
         }
 		ModelAndView modelAndView = new ModelAndView(list, "/WEB-INF/admindashboard.jsp");

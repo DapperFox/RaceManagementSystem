@@ -53,10 +53,11 @@ public class RacePostController {
 	}
 	
 	
-	public ModelAndView registerForRace(Long raceId, Long racerId){
-		RaceEvent race = raceService.getRaceEvent(raceId);
-		Racer racer = raceService.getRacer(racerId);
-		race.addRacerToRaceEvent(racer);
+	public ModelAndView registerForRace(Long raceId){
+        Racer racer = CurrentUser.getUser().getRacer();
+        RaceEvent race = raceService.getRaceEvent(raceId);
+        racer.addRaceEvents(race);
+//		race.addRacerToRaceEvent(racer);
 
 		List<RaceEvent> raceList = new ArrayList<>();
 		raceList.addAll(racer.getRacerEvents());

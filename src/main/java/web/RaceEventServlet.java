@@ -26,7 +26,7 @@ public class RaceEventServlet extends HttpServlet {
 	RaceGetController raceGetController;
 	private static final long serialVersionUID = 1L;
 	String regexCreatePattern = "/race/create";
-	String regexRacePattern = "(/race/)([0-9]+)(/[A-Za-z]*)";
+	String regexRacePattern = "(/race/)(/[A-Za-z]*)([0-9]+)";
 	String regexRaceDetails = "/race/([0-9]+)(/)?";
 	String regexRaceList = "/race/events";
 	String regexSpecificRaceList = "(/race/)(events)(/[A-Za-z]*)";
@@ -73,10 +73,10 @@ public class RaceEventServlet extends HttpServlet {
 		matcher = pattern.matcher(uriString);
 
 		if (matcher.matches()) {
-			if (matcher.group(3) != null) {
-				if (matcher.group(3).equalsIgnoreCase("/results")) {
+			if (matcher.group(2) != null) {
+				if (matcher.group(2).equalsIgnoreCase("/results")) {
 					modelAndView = raceGetController.getResultsList(Long
-							.parseLong(matcher.group(2)));
+							.parseLong(matcher.group(3)));
 				}
 			}
 		}
@@ -122,10 +122,9 @@ public class RaceEventServlet extends HttpServlet {
 		matcher = pattern.matcher(uriString);
 
 		if (matcher.matches()) {
-			if(matcher.group(3).equalsIgnoreCase("/register")){
-                Account user = CurrentUser.getUser();
+			if(matcher.group(2).equalsIgnoreCase("/register")){
                 modelAndView = racePostController.registerForRace(Long
-				.parseLong(matcher.group(2)), user.getRacer().getId());
+				.parseLong(matcher.group(3)));
 				
 			}
 		}

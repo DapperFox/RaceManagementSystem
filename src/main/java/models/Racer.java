@@ -120,7 +120,7 @@ public class Racer {
 		return racerEvents;
 	}
 
-	public void setRacerEvents(Set<RaceEvent> racerEvents) {
-		this.racerEvents = racerEvents;
+	public void addRaceEvents(RaceEvent racerEvent) {
+		this.racerEvents.add(racerEvent);
 	}
 }
