@@ -12,7 +12,7 @@
             <ul class="nav navbar-nav navbar-right">
 	            <c:choose>
 	            	<c:when test="${user.loggedIn}">
-		            	<li class="loggedInUser">Welcome, ${user.firstName }!</li>
+		            	<li class="loggedInUser">Welcome, ${user.firstName}!</li>
 		            	<li><a href="/logout">Logout</a></li>
 		            </c:when>
 		            <c:otherwise>

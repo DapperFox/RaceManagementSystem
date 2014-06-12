@@ -2,7 +2,10 @@ package web;
 
 import controllers.RacerGetController;
 import controllers.RacerPostController;
+import filter.CurrentUser;
+import models.Account;
 import models.ModelAndView;
+import models.Racer;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -44,6 +47,11 @@ public class RacerServlet extends HttpServlet {
         pattern = Pattern.compile(regexLogin);
         matcher = pattern.matcher(uriString);
         if(matcher.matches()){
+            Account account = CurrentUser.getUser();
+            HttpSession session = request.getSession();
+            Racer racer = account.getRacer();
+            racer.setLoggedIn(true);
+            session.setAttribute("user", racer);
             modelAndView = racerGetController.loginRacer();
         }
         request.setAttribute("model", modelAndView.getModel());
