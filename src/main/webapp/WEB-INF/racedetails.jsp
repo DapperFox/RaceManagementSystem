@@ -17,7 +17,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<img alt="Race poster image" class="img-responsive" src="${model.imageFilePath}>
+				<img alt="Race poster image" class="img-responsive" src="${model.imageFilePath}">
 			</div>
 			<div class="col-md-8">
 				<h1>${model.raceName}</h1>
