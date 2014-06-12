@@ -41,8 +41,8 @@
 						</a></td>
 						<td><c:out value="${race.raceDate}" /></td>
 						<td><c:out value="${race.raceType}" /></td>
-						<td><a href='/race/${race.id }/update'><button class="btn btn-default">Edit</button></a></td>
-						<td><a href='/race/${race.id }/delete'><button class="btn btn-default">Delete</button></a></td>
+						<td><a href='/admin/${race.id }/update'><button class="btn btn-default">Edit</button></a></td>
+						<td><a href='/admin/${race.id }/delete'><button class="btn btn-default">Delete</button></a></td>
 						<td><a href='/admin/${race.id }/results'><button class="btn btn-default">Results</button></a></td>
 					</tr>
 				</c:forEach>
