@@ -26,19 +26,19 @@
 				</thead>
 				
 				<c:if test="${model != null }">
-				<form role="form" method="POST" action="/admin/${model.id }/submitRaceResults">
+				
+						<form role="form" method="POST" action="/admin/${model.id }/submitRaceResults">
 				<c:forEach var="racer" items="${model.racers}">
 					<tr>
-						
-						<td><p name="racerId"> ${racer.id}</td>
+						<td><input name="racerId" value="${racer.id}" readonly></td>
 						<td><c:out value="${racer.firstName} ${racer.lastName }" /></td>
-						<td><input type="Text" class="form-control" name="rank"></td>
+						<td><input type="text" class="form-control" name="rank"></td>
 						<td><input type="text" class="form-control" name="raceTime"></td>
-				
 					</tr>
 				</c:forEach>
-				<input type="submit" value="Submit" class="btn btn-default pull-right"/>
-				</form>
+						<input type="submit" value="Submit" class="btn btn-default pull-right"/>
+						</form>
+				
 				</c:if>
 			</table>
 		</div>

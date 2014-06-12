@@ -67,10 +67,9 @@ public class AdminPostController {
 		RaceResult result = new RaceResult();
 		RaceEvent race = raceService.getRaceEvent(raceId);
 		Long racerId = (Long) request.getInstance().getAttribute("racerId");
-		
-		
+				
 		String time = (String) request.getInstance().getAttribute("raceTime");
-		long convertedTime = Long.parseLong(time);
+		//long convertedTime = Long.parseLong(time);
 		int rank = (int) request.getInstance().getAttribute("rank");
 		
 		Racer racer = raceService.getRacer(racerId);
