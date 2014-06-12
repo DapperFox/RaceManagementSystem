@@ -33,11 +33,11 @@ public class AdminGetController {
 
 	public ModelAndView adminDashboard() {
 		Set<RaceEvent> list = null;
-		if(request.getInstance().getSession().getAttribute("adminID") != null){
-            Admin adminCurrent = CurrentUser.getUser().getAdmin();
-            Admin admin = raceService.getAdmin(adminCurrent.getId());
-		list = admin.getRaceList();
-		}
+        Admin adminCurrent = CurrentUser.getUser().getAdmin();
+        if(adminCurrent != null) {
+//            Admin admin = raceService.getAdmin(adminCurrent.getId());
+            list = adminCurrent.getRaceList();
+        }
 		ModelAndView modelAndView = new ModelAndView(list, "/WEB-INF/admindashboard.jsp");
 		
 		return modelAndView;
