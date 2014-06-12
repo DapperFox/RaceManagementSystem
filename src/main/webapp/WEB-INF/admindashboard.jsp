@@ -18,7 +18,7 @@
 		<div class="row">
 		
 			<div class="pull-right">
-				<a href='/race/create'><button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>&nbsp;Create Event</button></a>
+				<a href='/race/create'><button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add Event</button></a>
 			</div>
 		
 			<table class="table table-hover">
@@ -36,14 +36,12 @@
 				<c:if test="${model != null }">
 				<c:forEach var="race" items="${model}">
 					<tr>
-						<td><a href="/race/${race.id}"> <c:out
-									value="${race.raceName}" />
-						</a></td>
+						<td><a href="/race/${race.id}"> <c:out value="${race.raceName}" /></a></td>
 						<td><c:out value="${race.raceDate}" /></td>
 						<td><c:out value="${race.raceType}" /></td>
-						<td><a href='/admin/${race.id }/update'><button class="btn btn-default">Edit</button></a></td>
-						<td><a href='/admin/${race.id }/delete'><button class="btn btn-default">Delete</button></a></td>
-						<td><a href='/admin/${race.id }/results'><button class="btn btn-default">Results</button></a></td>
+						<td><a href='/admin/${race.id }/update'><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit</button></a></td>
+						<td><a href='/admin/${race.id }/delete'><button class="btn btn-default"><span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;Delete</button></a></td>
+						<td><a href='/admin/${race.id }/results'><button class="btn btn-default"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;Results</button></a></td>
 					</tr>
 				</c:forEach>
 				</c:if>
