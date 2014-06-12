@@ -73,12 +73,16 @@ public class AdminPostController {
 		//Insert a row into race result that has the racer id, race id, raceTime, racePosition
 		List<RaceResult> resultsList = new ArrayList<RaceResult>();
 		RaceEvent race = raceService.getRaceEvent(raceId);
-		Map<String, String[]> arrayData = request.getInstance().getParameterMap();
-		for(int i = 0; i < arrayData.size() - 1; i++){
+		//Map<String, String[]> arrayData = request.getInstance().getParameterMap();
+		String[] racerIds = request.getInstance().getParameterValues("racerId");
+		String[] raceTimes = request.getInstance().getParameterValues("raceTime");
+		String[] ranks = request.getInstance().getParameterValues("rank");
+		
+		for(int i = 0; i < racerIds.length; i++){
 			RaceResult result = new RaceResult();
-			Long racerId = Long.parseLong(arrayData.get("racerId")[i]);//request.getInstance().getAttribute("racerId");
-			String time = arrayData.get("raceTime")[i];
-			int rank = Integer.parseInt(arrayData.get("rank")[i]);
+			Long racerId = Long.parseLong(racerIds[i]);//request.getInstance().getAttribute("racerId");
+			String time = raceTimes[i];
+			int rank = Integer.parseInt(ranks[i]);
 			
 			Racer racer = raceService.getRacer(racerId);
 			//result.setRacePosition(rank);
