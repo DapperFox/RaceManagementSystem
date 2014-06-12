@@ -17,7 +17,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<img alt="Race poster image" src="${model.imageFilePath}">	
+				<img alt="Race poster image" class="img-responsive" src="${model.imageFilePath}>
 			</div>
 			<div class="col-md-8">
 				<h1>${model.raceName}</h1>
@@ -39,7 +39,7 @@
 		<div class="row">
 			<p>${model.raceDescription}</p>
 		</div>
-		<form role="form" method="POST" action="/race/${model.id}/register">
+		<form role="form" method="POST" action="/race/register/${model.id}">
 		<button type="submit" class="btn btn-default pull-right">Register</button>
 		</form>
 	</div>

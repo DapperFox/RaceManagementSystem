@@ -52,6 +52,10 @@
 		        <label class="control-label">Description</label>
 				<textarea class="form-control" rows="3" name="description"></textarea>
 		      </div>
+                <div class="form-group">
+                    <label class="control-label" for="image">Image URL</label>
+                    <input type="text" class="form-control" name="image" id="image">
+                </div>
 			  <div class="form-group">
 		        <label class="control-label">Twitter Page</label>
 				<input type="text" class="form-control" name="twitterPage">

@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Race Management System</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <%--jquery--%>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -40,7 +41,7 @@
 		            <div class="carousel-caption">
 		              <h1>SLCycle</h1>
 		              <p class="lead">Cruise around Salt Lake City in a 50 miler.</p>
-		              <a class="btn btn-large" href="/race/201">Register today</a>
+		              <a class="btn btn-large" href="/race/1801">Check it out!</a>
 		            </div>
 		          </div>
 		        </div>
@@ -72,6 +73,6 @@
 			
 		</div>
 
-   		<%@ include file="../WEB-INF/partials/footer.jsp" %>
+   		<jsp:include page="/WEB-INF/partials/footer.jsp"></jsp:include>
 </body>
 </html>

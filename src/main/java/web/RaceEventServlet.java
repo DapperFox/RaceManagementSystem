@@ -26,7 +26,7 @@ public class RaceEventServlet extends HttpServlet {
 	RaceGetController raceGetController;
 	private static final long serialVersionUID = 1L;
 	String regexCreatePattern = "/race/create";
-	String regexRacePattern = "(/race/)(/[A-Za-z]*)([0-9]+)";
+	String regexRacePattern = "(/race/)([A-Za-z]*)/([0-9]+)";
 	String regexRaceDetails = "/race/([0-9]+)(/)?";
 	String regexRaceList = "/race/events";
 	String regexSpecificRaceList = "(/race/)(events)(/[A-Za-z]*)";

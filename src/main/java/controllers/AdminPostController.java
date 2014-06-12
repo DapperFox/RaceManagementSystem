@@ -71,7 +71,6 @@ public class AdminPostController {
 
 	public ModelAndView submitResults(Long raceId) {
 		//Insert a row into race result that has the racer id, race id, raceTime, racePosition
-		
 		List<RaceResult> resultsList = new ArrayList<RaceResult>();
 		RaceEvent race = raceService.getRaceEvent(raceId);
 		Map<String, String[]> arrayData = request.getInstance().getParameterMap();

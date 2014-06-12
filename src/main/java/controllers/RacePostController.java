@@ -42,6 +42,7 @@ public class RacePostController {
 		race.setRaceTime(request.getInstance().getParameter("time"));
 		race.setRaceCost(Double.parseDouble(request.getInstance().getParameter("cost")));
 		race.setRaceDescription(request.getInstance().getParameter("description"));
+        race.setImageFilePath(request.getInstance().getParameter("image"));
 		race.setRaceTwitterPage(request.getInstance().getParameter("twitterPage"));
 		race.setRaceFaceBookPage(request.getInstance().getParameter("facebookPage"));
 
@@ -57,7 +58,6 @@ public class RacePostController {
         Racer racer = CurrentUser.getUser().getRacer();
         RaceEvent race = raceService.getRaceEvent(raceId);
         racer.addRaceEvents(race);
-//		race.addRacerToRaceEvent(racer);
 
 		List<RaceEvent> raceList = new ArrayList<>();
 		raceList.addAll(racer.getRacerEvents());
