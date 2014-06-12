@@ -99,8 +99,16 @@ public class RaceService implements IRaceService {
 	}
 
     @Override
+    public void updateRacer(Racer racer) {
+        Racer dbRacer = em.merge(racer);
+        em.persist(dbRacer);
+    }
+
+    @Override
     public Account getAccountByEmail(String email) {
         return (Account)em.createNamedQuery("byUsername")
                 .setParameter("email", email).getSingleResult();
     }
+
+
 }

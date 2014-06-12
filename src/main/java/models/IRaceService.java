@@ -32,4 +32,5 @@ public interface IRaceService {
 
     RaceEvent getAllRacersFromRace(Long id);
 
+    void updateRacer(Racer racer);
 }

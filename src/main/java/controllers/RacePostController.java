@@ -58,6 +58,7 @@ public class RacePostController {
         Racer racer = CurrentUser.getUser().getRacer();
         RaceEvent race = raceService.getRaceEvent(raceId);
         racer.addRaceEvents(race);
+        raceService.updateRacer(racer);
 
 		List<RaceEvent> raceList = new ArrayList<>();
 		raceList.addAll(racer.getRacerEvents());
