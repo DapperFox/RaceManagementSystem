@@ -99,6 +99,11 @@ img{
 	opacity: .7;
 }
 
+.hideBox{
+	border: 0px solid #f2f2f2;
+	background-color: #f2f2f2;
+}
+
 /* Footer */
 footer {
 	position: absolute;

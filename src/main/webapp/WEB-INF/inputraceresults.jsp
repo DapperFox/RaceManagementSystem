@@ -31,7 +31,7 @@
 						<form role="form" method="POST" action="/admin/${model.id }/submitRaceResults">
 				<c:forEach var="racer" items="${model.racers}">
 					<tr>
-						<td><input name="racerId" value="${racer.id}" readonly></td>
+						<td><input class="hideBox" name="racerId" value="${racer.id}" readonly></td>
 						<td><c:out value="${racer.firstName} ${racer.lastName }" /></td>
 						<td><input type="text" class="form-control" name="rank"></td>
 						<td><input type="text" class="form-control" name="raceTime"></td>

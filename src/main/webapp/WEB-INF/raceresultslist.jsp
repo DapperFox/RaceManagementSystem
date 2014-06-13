@@ -28,7 +28,7 @@
 				<c:forEach var="racer" items="${model}">
 					<tr>
                         <td><c:out value="${racer.racer.id}" /></td>
-                        <td><c:out value="${racer.racer.firstName}" /></td>
+                        <td><c:out value="${racer.racer.firstName }"/></td>
 						<td><c:out value="${racer.raceTime}" /></td>
                         <td><c:out value="${racer.racePosition}" /></td>
 					</tr>

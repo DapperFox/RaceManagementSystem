@@ -16,7 +16,7 @@ public class RaceResult {
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator="RaceResultSequence")
     private Long id;
 
-    @Column(name="raceTime")
+	@Column(name="raceTime")
     private String raceTime;
 
     @Column(name="racePosition")
@@ -33,6 +33,22 @@ public class RaceResult {
     public RaceResult() {
 
     }
+    
+    public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public RaceEvent getRacerEvent() {
+		return racerEvent;
+	}
+
+	public void setRacerEvent(RaceEvent racerEvent) {
+		this.racerEvent = racerEvent;
+	}
 
     public Integer getRacePosition() {
         return racePosition;

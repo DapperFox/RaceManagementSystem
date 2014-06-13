@@ -76,6 +76,11 @@ public class RaceService implements IRaceService {
     }
     
     @Override
+    public void createRaceResult(RaceResult result){
+    	em.persist(result);
+    }
+    
+    @Override
     public void createAccount(Account account){
     	em.persist(account);
     }

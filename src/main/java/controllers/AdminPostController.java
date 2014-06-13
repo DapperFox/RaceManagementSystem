@@ -73,25 +73,32 @@ public class AdminPostController {
 		//Insert a row into race result that has the racer id, race id, raceTime, racePosition
 		List<RaceResult> resultsList = new ArrayList<RaceResult>();
 		RaceEvent race = raceService.getRaceEvent(raceId);
+		if(request.getInstance().getParameterValues("racerId") != null){
 		//Map<String, String[]> arrayData = request.getInstance().getParameterMap();
 		String[] racerIds = request.getInstance().getParameterValues("racerId");
 		String[] raceTimes = request.getInstance().getParameterValues("raceTime");
 		String[] ranks = request.getInstance().getParameterValues("rank");
 		
 		for(int i = 0; i < racerIds.length; i++){
-			RaceResult result = new RaceResult();
-			Long racerId = Long.parseLong(racerIds[i]);//request.getInstance().getAttribute("racerId");
-			String time = raceTimes[i];
-			int rank = Integer.parseInt(ranks[i]);
 			
-			Racer racer = raceService.getRacer(racerId);
-			//result.setRacePosition(rank);
-			result.setRaceTime(time);
-			result.setRacerEvents(race);
-			result.setRacer(racer);
-			resultsList.add(result);
+				RaceResult result = new RaceResult();
+				Long racerId = Long.parseLong(racerIds[i]);//request.getInstance().getAttribute("racerId");
+				
+				String time = raceTimes[i];
+				int rank = Integer.parseInt(ranks[i]);
+				
+				Racer racer = raceService.getRacer(racerId);
+				//result.setRacePosition(rank);
+				result.setRaceTime(time);
+				result.setRacerEvents(race);
+				result.setRacer(racer);
+				result.setRacePosition(rank);
+				raceService.createRaceResult(result);
+				
+				resultsList.add(result);
+			}
 		}
-		ModelAndView modelAndView = new ModelAndView(resultsList, "/WEB-INF/raceresultlist.jsp");
+		ModelAndView modelAndView = new ModelAndView(resultsList, "/WEB-INF/raceresultslist.jsp");
 		
 		return modelAndView;
 	}
