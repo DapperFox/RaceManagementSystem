@@ -15,10 +15,10 @@
     <div class="row">
         <h1>Login</h1>
         <hr />
-        <h3>Email or password was incorrect</h3>
     </div>
     <div class="row">
     	<div class="col-md-4 col-md-offset-4">
+    		<h3>Email or password was incorrect</h3>
 	        <form role="form" method="POST" action="j_security_check">
 	            <div class="control-group has-error">
 	                <label class="control-label" for="inputError">Email</label>

@@ -17,7 +17,7 @@
 			<hr />
 		</div>
 		<div class="row">	
-			<form role="form" method="POST" action="/race/${model.id }/update">
+			<form role="form" method="POST" action="/admin/${model.id }/update">
 		      <div class="form-group">
 		        <label class="control-label">Event Name</label>
 		       
