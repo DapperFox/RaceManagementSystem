@@ -17,10 +17,8 @@
 <jsp:include page="/WEB-INF/partials/header.jsp"></jsp:include>
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4 col-md-offset-4">
              <h3>Login Successful</h3>
-            <a href="/" class="btn btn-default">Home</a>
-            <a href="/race/events" class="btn btn-default">Events</a>
         </div>
     </div>
 </div>

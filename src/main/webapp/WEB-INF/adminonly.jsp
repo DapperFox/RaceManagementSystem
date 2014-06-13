@@ -20,12 +20,14 @@
     <script src="/resources/script/main.js"></script>
 </head>
 <body>
+<jsp:include page="/WEB-INF/partials/header.jsp"></jsp:include>
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <h3>Only administrators can create race events. If you are an administrator, please <a href="/admin">login</a></h3>
+            <h3>You do not have access to view this page.</h3>
         </div>
     </div>
 </div>
+<jsp:include page="/WEB-INF/partials/footer.jsp"></jsp:include>
 </body>
 </html>

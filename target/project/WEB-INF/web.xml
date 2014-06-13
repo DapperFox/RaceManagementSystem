@@ -27,6 +27,17 @@
       <role-name>ADMIN</role-name>
     </auth-constraint>
   </security-constraint>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Both Admin and Racer
+                Operations</web-resource-name>
+            <url-pattern>/racer/login</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>ADMIN</role-name>
+            <role-name>RACER</role-name>
+        </auth-constraint>
+    </security-constraint>
 
     <security-constraint>
         <web-resource-collection>
@@ -39,8 +50,8 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Racer Operations</web-resource-name>
-            <url-pattern>/racer/login</url-pattern>
             <url-pattern>/race/register/*</url-pattern>
+            <url-pattern>/racer/events</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>RACER</role-name>
